@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -16,9 +19,9 @@
 
 	<header>
         <!-- top navbar -->
-		<nav class="nav-extended text-shadow green darken-4">
+		<nav class="nav-extended text-shadow lime darken-4">
 			<div class="nav-wrapper">
-				<a href="{{ url_for('get_recipes') }}" class="brand-logo"> <i class="fa-solid fa-seedling"></i> Vegan Cook Book</a>
+				<a href="{{ url_for('get_recipes') }}" id= "nav-title" class= "brand-logo"> Vegan Cook Book</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -32,7 +35,7 @@
 
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align green-text text-darken 4"> <i class="fa-solid fa-seedling"></i> Vegan Cook Book</h4></li>
+            <li><h4 class="center-align lime darken-4"> Vegan Cook Book</h4></li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">New Task</a></li>
