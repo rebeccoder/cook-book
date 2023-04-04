@@ -4,25 +4,45 @@
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register')}}">
         <div class="card-panel lime lighten-3">
-            <div class="row">
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s12">
-                        <input id="username" name="username" type="text" class="validate">
-                        <label for="username"><i class="fa-regular fa-user"></i> Username</label>
-                    </div>
-                   </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="password" name="password "type="password" class="validate">
-                      <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <button class="col s12 btn text-shadow lime darken-4" type="submit" name="action">Register <i class="fa-solid fa-right-to-bracket"></i>
-                      </button>
-                  </div>
-        </div>
+          <!-- first name -->
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" name="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+          <!-- last name -->
+            <div class="input-field col s6">
+              <input id="last_name" name = "last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <!-- username -->
+          <div class="row">
+            <div class="input-field col s12">
+                <input id="username" name="username" type="text" class="validate">
+                <label for="username"><i class="fa-regular fa-user"></i> Username</label>
+            </div>
+          </div>
+          <!-- password -->
+          <div class="row">
+              <div class="input-field col s12">
+                  <input id="password" name="password" type="password" class="validate">
+                  <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
+              </div>
+          </div>
+          <!-- email -->
+          <div class="row">
+            <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+            </div>
+          </div>
+          <!-- register button -->
+          <div class="row">
+              <button class="col s12 btn text-shadow lime darken-4" type="submit" name="action">Register <i class="fa-solid fa-right-to-bracket"></i>
+              </button>
+          </div>
+          </form>
     </div>
 
 {% endblock %}
