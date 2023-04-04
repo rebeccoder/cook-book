@@ -4,4 +4,6 @@
 
 .headings {
     font-family: 'Rajdhani', sans-serif;
+    text-transform: capitalize;
+    left: 2rem;
 }
