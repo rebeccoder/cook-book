@@ -7,33 +7,38 @@
           <!-- first name -->
           <div class="row">
             <div class="input-field col s6">
-              <input id="first_name" name="first_name" type="text" class="validate">
+              <input id="first_name" name="first_name" type="text"
+              pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
               <label for="first_name">First Name</label>
             </div>
           <!-- last name -->
             <div class="input-field col s6">
-              <input id="last_name" name = "last_name" type="text" class="validate">
+              <input id="last_name" name = "last_name" type="text"
+              pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
               <label for="last_name">Last Name</label>
             </div>
           </div>
           <!-- username -->
           <div class="row">
             <div class="input-field col s12">
-                <input id="username" name="username" type="text" class="validate">
+                <input id="username" name="username" type="text" min-length="4"
+                 max-lenght="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 <label for="username"><i class="fa-regular fa-user"></i> Username</label>
             </div>
           </div>
           <!-- password -->
           <div class="row">
               <div class="input-field col s12">
-                  <input id="password" name="password" type="password" class="validate">
+                  <input id="password" name="password" type="password" minlength="8"
+                  maxlength="16" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                   <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
               </div>
           </div>
           <!-- email -->
           <div class="row">
             <div class="input-field col s12">
-                  <input id="email" name="email" type="email" class="validate">
+                  <input id="email" name="email" type="email" minlength="5"
+                  pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                   <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
             </div>
           </div>
