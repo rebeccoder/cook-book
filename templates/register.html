@@ -37,8 +37,7 @@
           <!-- email -->
           <div class="row">
             <div class="input-field col s12">
-                  <input id="email" name="email" type="email" minlength="5"
-                  pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                  <input id="email" name="email" type="email" class="validate" required>
                   <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
             </div>
           </div>
@@ -49,5 +48,14 @@
           </div>
           </form>
     </div>
+    <!-- link back to login-->
+    <div class="row">
+      <div class="col s12">
+          <p class="center-align">
+              Already have an account?
+              <a href="{{ url_for('login') }}" class="text-shadow">Log In</a>
+          </p>
+      </div>
+  </div>
 
 {% endblock %}
