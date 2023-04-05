@@ -56,7 +56,7 @@ def register():
     # put new user into session cookies
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-    return render_template("register.html")
+    return redirect(url_for("register"))
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -72,6 +72,7 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Hello, {}. Welcome Back!".format(
                         request.form.get("username")))
+                    return redirect(url_for("get_recipes"))
             else:
                 # wrong password
                 flash("Incorrect Username and/or Password. Please try again.")
