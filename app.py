@@ -92,6 +92,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     # adds recipe to database
@@ -111,6 +112,10 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipes)
         flash("Recipe Added")
         return redirect(url_for("get_recipes"))
+
+        allergens = mongo.db.recipe_allergens.find().sort("recipe_allergens", 1)
+        category = mongo.db.recipe_category.find().sort("recipe_category", 1)
+        return render_template("add_recipe.html", recipe_allergens=recipe_allergens, recipe_category=recipe_category)
 
 
     return render_template(

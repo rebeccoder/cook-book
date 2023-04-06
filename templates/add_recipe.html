@@ -10,59 +10,63 @@
     <!-- add recipe name-->
     <div class="row">
       <div class="input-field col s12">
-        <p>Recipe name:</p>
         <input id="recipe_name" type="text" name="recipe_name" maxlength="15" class="validate" required>
+        <label for="recipe_name">Recipe Name: </label>
       </div>
     </div>
     <!-- add ingredients -->
     <div class="row">
       <div class="input-field col s12">
-        <p>Ingredients (Please write ingredients individally divided by a ","):</p>
-        <input id="recipe_ingredients" type="text" name="recipe_ingredients" class="validate" required>
+        <input placeholder="(Please write ingredients individally divided by a ',')" id="recipe_ingredients" type="text" name="recipe_ingredients" class="validate" required>
+        <label for="recipe_ingredients">Ingredients:</label>
       </div>
     </div>
     <!-- allergens -->
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
-            <option value="" disabled selected>Click to add any allergens: </option>
           <option value="No Allergens">No Allergens</option>
           <option value="Gluten">Gluten</option>
           <option value="Nuts">Nuts</option>
         </select>
+        <label for="recipe_allergens">Click to add any allergens: </label>
       </div>
     </div>
     <!-- short description of the recipe -->
-    <div class="row">
-      <div class="input-field col s12">
-        <p>Add a short description:</p>
-        <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" maxlength="90" required></textarea>
-      </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea id="recipe_description" name="recipe_description" class="materialize-textarea validate" required></textarea>
+      <label for="recipe_description">Add a short description:</label>
     </div>
+  </div>
+
     <!-- steps of the recipe -->
-    <div class="row">
-      <div class="input-field col s12">
-        <p>Describe the steps to prepare your recipe:</p>
-        <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" required></textarea>
-      </div>
-    </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required></textarea>
+            <label for="recipe_steps">Describe the steps to prepare your recipe:</label>
+          </div>
+        </div>
+
     <!-- category of the dish -->
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_category" name="recipe_category" class="validate" required>
-          <option value="" disabled selected>Click to select the category: </option>
           <option value="Appetizer">Appetizer</option>
-          <option value="First Course">Main Course</option>
+          <option value="Main Course">Main Course</option>
           <option value="Dessert">Dessert</option>
         </select>
+        <label for="recipe_category">Click to add any allergens: </label>
       </div>
     </div>
-    <br>
+
+    <!-- add image -->
+    <div class="row">
      <div class="file-field input-field">
-        <p>Upload an image by URL</p>
+        <label for="recipe_image">Upload an image by URL</label>
         <input placeholder="Paste the image URL" type="url" name="recipe_image" id="recipe_image" onchange="addImage();" required pattern="https://.*" class="validate">
       </div>
-    <br>
+    </div>
 
     <!-- submit button -->
     <div class="row">
