@@ -5,17 +5,12 @@
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $(".collapsible").collapsible();
-    $(".tooltipped").tooltip();
-    $("select").formSelect();
-    $(".datepicker").datepicker({
-        format: "dd mmmm, yyyy",
-        yearRange: 3,
-        showClearBtn: true,
-        i18n: {
-            done: "Select"
-        }
-    });
+    $('select').formSelect();
+  });
 
+/* 
+    ensures proper validation on the add recipe form
+*/
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
