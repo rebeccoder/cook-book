@@ -5,7 +5,7 @@
 <h3 class="text-shadow brand-logo center-align"> Add Recipe </h3>
 <br>
 
-<div class="row card-panel grey lighten-5">
+<div class="row card-panel lime lighten-3">
   <form class="col s12" method="POST" enctype="multipart/form-data" action="{{ url_for('add_recipe') }}">
     <!-- add recipe name-->
     <div class="row">
@@ -63,7 +63,7 @@
     <!-- add image -->
     <div class="row">
      <div class="file-field input-field">
-        <label for="recipe_image">Upload an image by URL</label>
+        <label for="recipe_image">Upload an image by URL: </label>
         <input placeholder="Paste the image URL" type="url" name="recipe_image" id="recipe_image" onchange="addImage();" required pattern="https://.*" class="validate">
       </div>
     </div>

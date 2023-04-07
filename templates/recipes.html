@@ -1,8 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipe in recipes %}
+{% for recipe in recipes %}
+<main class="main">
+    <div class="container recipe-container text">
+        <div class="row">
+            <div class="col-md">
+                <h3>{{ recipe.recipe_name }}</h3>
+                <p>{{ recipe.recipe_description }}</p>
+                <ul>
+                    {% for i in recipe.ingredients %}
+                    <li>
+                        {{i}}
+                    </li>
+                    {% endfor %}
+                    <div class="col-sm mobile-fix">
+                        <!--<img class=" img-fluid mx-auto" src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}"></img> -->
+                        <div class="col text-center">
+                            <ul class="unordered">
+                                <li>Allergens {{ recipe.recipe_allergens }}</li>
+                                <li>Category {{recipe.recipe_category}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Steps</h4>
+                        <!-- For Loop iterating over the array of the steps. -->
+                            {% for x in recipe.recipe_steps %}
+        
+                            <li class="recipe_steps">
+                                {{ x }}
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div> 
+        </div>
+    </div>
+</main>
 
-    {% endfor %}
+{% endfor %}
+
 
 {% endblock %}
