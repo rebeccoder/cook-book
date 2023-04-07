@@ -115,8 +115,9 @@ def add_recipe():
 
         allergens = mongo.db.recipe_allergens.find().sort("recipe_allergens", 1)
         category = mongo.db.recipe_category.find().sort("recipe_category", 1)
-        return render_template("add_recipe.html", recipe_allergens=recipe_allergens, recipe_category=recipe_category)
-
+        return render_template(
+            "add_recipe.html", recipe_allergens=recipe_allergens,
+            recipe_category=recipe_category)
 
     return render_template(
         "add_recipe.html")
