@@ -59,6 +59,16 @@ def register():
     return redirect(url_for("register"))
 
 
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    # search bar
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
