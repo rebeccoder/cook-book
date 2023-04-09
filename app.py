@@ -131,6 +131,45 @@ def add_recipe():
         "add_recipe.html")
 
 
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    if recipe["created_by"] != session["user"]:
+        flash("You are unable to edit this recipe")
+        return redirect(url_for("get_recipes"))
+
+    if request.method == "POST":
+        amend_recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "serves": request.form.get("serves"),
+            "cooking_time": request.form.get("cooking_time"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "url_uploaded": request.form.get("url_uploaded"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.replace_one(
+            {"_id": ObjectId(recipe_id)}, amend_recipe)
+        flash("Recipe Successfully Updated")
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit_recipe.html", recipe=recipe)
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    if recipe["created_by"] != session["user"]:
+        flash("You are unable to delete this recipe")
+        return redirect(url_for("get_recipes"))
+
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("get_recipes"))
+    
 @app.route("/show_recipe/<recipe_id>", methods=["GET", "POST"])
 def show_recipe(recipe_id):
     # directs user to full recipe page
