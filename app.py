@@ -28,7 +28,8 @@ def get_recipes():
 def search():
     # search bar
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    # recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    recipes = list(mongo.db.recipes.find({"recipe_name": {"$regex": query, "$options": "ig"}}))
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -63,7 +64,7 @@ def register():
     # put new user into session cookies
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-    return redirect(url_for("register"))
+    return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -128,6 +129,25 @@ def add_recipe():
 
     return render_template(
         "add_recipe.html")
+
+
+@app.route("/show_recipe/<recipe_id>", methods=["GET", "POST"])
+def show_recipe(recipe_id):
+    # directs user to full recipe page
+    if request.method == "POST":
+        recipe_method = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_category": request.form.getlist("recipe_category"),
+            "recipe_allergens": request.form.getlist("recipe_allergens"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_steps": request.form.get("recipe_steps"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.find_one(
+            {"_id": ObjectId(recipe_id)}, recipe_method)
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("show_recipe.html", recipe=recipe)
 
 
 if __name__ == "__main__":

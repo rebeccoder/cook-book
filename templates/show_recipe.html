@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Recipe Instructions</h3>
+
+<div class="row">
+  <div class="row">
+    <div class="card">
+      <form method="POST" action="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
+        <div class="card-image">
+          <img src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}"/>
+          <h4 strong class="center-align">{{ recipe.recipe_name}}</h4>
+          <p>Ingredients: {{ recipe.recipe_ingredients }} </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
