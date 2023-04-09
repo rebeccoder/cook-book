@@ -24,6 +24,13 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    # search bar
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -57,16 +64,6 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return redirect(url_for("register"))
-
-
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    # search bar
-    query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/login", methods=["GET", "POST"])
