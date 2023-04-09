@@ -1,3 +1,9 @@
+body { 
+    background-image: url('/static/images/website-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -6,4 +12,9 @@
     font-family: 'Rajdhani', sans-serif;
     text-transform: capitalize;
     left: 2rem;
+}
+
+footer {
+    padding: 2px;
+    color: white;
 }
