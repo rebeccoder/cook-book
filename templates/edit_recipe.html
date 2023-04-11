@@ -8,16 +8,17 @@
             <!-- edit recipe name-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="recipe_name" name="recipe_name"
+                    <input id="recipe_name" name="recipe_name" minlenght="2" maxlength="20"
                         value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name: </label>
                 </div>
             </div>
+
             <!-- edit ingredients-->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="recipe_ingredients" name="recipe_ingredients" 
-                    class="materialize-textarea validate" required>
+                    minlenght="4" maxlength="250" class="materialize-textarea validate" required>
                         {{- recipe.recipe_ingredients -}}
                     </textarea>
                     <label for="recipe_ingredients">Ingredients: </label>
@@ -43,19 +44,23 @@
             <!-- short description of the recipe -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="recipe_description" name="recipe_description" class="materialize-textarea active validate" 
+                    <textarea id="recipe_description" name="recipe_description" 
+                    minlenght="4" maxlength="250" class="materialize-textarea active validate" 
                             required> {{- recipe.recipe_description -}} </textarea>
                     <label for="recipe_description">Add a short description:</label>
                 </div>
             </div>
+
             <!-- edit steps -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea active validate" 
-                            required> {{- recipe.recipe_steps -}} </textarea>
+                    <textarea id="recipe_steps" name="recipe_steps"
+                    minlenght="4" maxlength="250" class="materialize-textarea active validate" required>
+                    {{- recipe.recipe_steps -}} </textarea>
                     <label for="recipe_description">Describe the steps to prepare your recipe: </label>
                 </div>
             </div>
+
             <!-- category of the dish -->
             <div class="row">
                 <div class="input-field col s12">
@@ -72,12 +77,15 @@
                   <label for="recipe_category">Click to add category of the dish: </label>
                 </div>
               </div>
+
             <!-- edit image -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="recipe_image" name="recipe_image" value="{{ recipe.recipe_image }}" type="text" class="validate" required>
+                    <input id="recipe_image" name="recipe_image" value="{{ recipe.recipe_image }}"
+                    minlenght="4" maxlength="250" type="text" class="validate" required>
                     <label for="url_uploaded">Please paste a link to an image of your recipe here:</label>
                 </div>
+
             <!--cancel and submit buttons-->
             <div class="row">
                 <a href="{{ url_for('get_recipes') }}" class="btn-large green lighten-1 text-shadow">

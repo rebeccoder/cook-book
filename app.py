@@ -24,6 +24,7 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     # search bar
@@ -183,7 +184,8 @@ def edit_recipe(recipe_id):
     return render_template(
         "edit_recipe.html", recipe=recipe,
         allergens=allergens, categories=categories)
-        
+
+
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -195,7 +197,8 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
-    
+
+
 @app.route("/show_recipe/<recipe_id>", methods=["GET", "POST"])
 def show_recipe(recipe_id):
     # directs user to full recipe page

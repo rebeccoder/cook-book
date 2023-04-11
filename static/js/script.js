@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('select').formSelect();
   });
 
+
 /* 
     ensures proper validation on the add recipe form
 */
