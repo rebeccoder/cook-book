@@ -26,7 +26,7 @@
       <div class="input-field col s12">
         <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
           <option value="" disabled selected>Select Allergens</option>
-          {% for allergens in recipe_allergens %}
+          {% for allergen in allergens %}
           <option value="{{ allergen.recipe_allergens }}">{{ allergen.recipe_allergens }}</option>
           {% endfor %}
         </select>
