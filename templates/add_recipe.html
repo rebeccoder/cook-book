@@ -21,7 +21,7 @@
         <label for="recipe_ingredients">Ingredients:</label>
       </div>
     </div>
-    <!-- allergens -->
+    <!-- allergens  -->
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
@@ -33,7 +33,7 @@
         <label for="recipe_allergens">Click to add any allergens: </label>
       </div>
     </div>
-    
+   
     <!-- short description of the recipe -->
   <div class="row">
     <div class="input-field col s12">
@@ -54,11 +54,12 @@
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_category" name="recipe_category" class="validate" required>
-          <option value="Appetizer">Appetizer</option>
-          <option value="Main Course">Main Course</option>
-          <option value="Dessert">Dessert</option>
+          <option value="" disabled selected>Select Category</option>
+          {% for category in categories %}
+          <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
+          {% endfor %}
         </select>
-        <label for="recipe_category">Click to add category of the dish: </label>
+        <label for="recipe_category">Click to add category of the dish:</label>
       </div>
     </div>
 

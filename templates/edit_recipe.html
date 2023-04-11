@@ -23,17 +23,8 @@
                     <label for="recipe_ingredients">Ingredients: </label>
                 </div>
             </div>
+
             <!-- edit allergens -->
-            <!-- <div class="row">
-                <div class="input-field col s12">
-                <select multiple id="recipe_allergens" name="recipe_allergens"class=" active validate" required>
-                    <option value="No Allergens">No Allergens</option>
-                    <option value="Gluten">Gluten</option>
-                    <option value="Nuts">Nuts</option>
-                </select>
-                <label for="recipe_allergens">Click to add any allergens: </label>
-                </div>
-            </div> -->
             <div class="row">
                 <div class="input-field col s12">
                   <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
@@ -68,14 +59,19 @@
             <!-- category of the dish -->
             <div class="row">
                 <div class="input-field col s12">
-                <select multiple id="recipe_category" name="recipe_category" value="{{ recipe.recipe_category }}"class="validate" required>
-                    <option value="Appetizer">Appetizer</option>
-                    <option value="Main Course">Main Course</option>
-                    <option value="Dessert">Dessert</option>
-                </select>
-                <label for="recipe_category">Click to add category of the dish: </label>
+                  <select multiple id="recipe_category" name="recipe_category" class="validate" required>
+                    <option value="" disabled>Select Category</option>
+                    {% for category in categories %}
+                      {% if category.recipe_category in recipe.recipe_category %}
+                        <option value="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
+                      {% else %}
+                        <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                  <label for="recipe_category">Click to add category of the dish: </label>
                 </div>
-            </div>
+              </div>
             <!-- edit image -->
             <div class="row">
                 <div class="input-field col s12">
