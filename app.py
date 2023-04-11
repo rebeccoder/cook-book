@@ -162,7 +162,7 @@ def edit_recipe(recipe_id):
     # updates recipe in database
     if request.method == "POST":
 
-        recipes = {
+        submit = {
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
@@ -173,7 +173,7 @@ def edit_recipe(recipe_id):
             "created_by": session["user"]
         }
 
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, recipes)
+        mongo.db.recipes.replace_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated")
         return redirect(url_for("get_recipes"))
 
