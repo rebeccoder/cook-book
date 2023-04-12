@@ -18,3 +18,11 @@ footer {
     padding: 2px;
     color: white;
 }
+
+#recipe-page {
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    padding: 1.5em;
+}
+

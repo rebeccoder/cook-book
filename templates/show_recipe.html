@@ -1,20 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="headings text-shadow center-align">{{recipe.recipe_name}} recipe</h3>
+<h3 class="headings text-shadow center-align">Full {{recipe.recipe_name}} recipe</h3>
 
 <div class="row">
-  <div class="row">
-    <div class="card">
+    <div class="card green lighten-4">
       <form method="POST" action="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
         <div class="card-image">
+          <div id="recipe-page">
           <img src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}"/>
-          <h4 strong class="center-align">{{ recipe.recipe_name}}</h4>
-          {% for ingredient in ingredients %}
-          <p>Ingredients: {{ recipe.recipe_ingredients }} </p>
-          {$ endfor $}
+          <h4 strong class=" text-shadow center-align">{{ recipe.recipe_name}}</h4>
+          <p>Category: {{ recipe.recipe_category }} </p>
+          <p>Allergens: {{ recipe.recipe_allergens }} </p>
+          <p>Ingredients:</p>
+          <ol>
+          {% for ingredient in recipe.recipe_ingredients.split(",") %}
+          <li>{{ingredient}}</li>
+          {% endfor %}
+          </ol>
+          <p>Steps:</p>
+          <ol>
+          {% for step in recipe.recipe_steps.split(",") %}
+          <li>{{step}}</li>
+          {% endfor %}
+          </ol>
+          <p>Uploaded by: {{ recipe.created_by }}</p>
+        </div>
         </div>
       </form>
     </div>
-  </div>
 </div>
 {% endblock %}
