@@ -2,6 +2,7 @@
 {% block content %}
 
     <h3 class="text-shadow center-align headings">Edit Recipe</h3>
+    <br>
 
     <div class="row card-panel green lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
@@ -42,7 +43,16 @@
                 </div>
               </div>
               
-            <!-- short description of the recipe -->
+            <!-- edit cooking time -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="cooking_time" name="cooking_time" 
+                    value="{{ recipe.cooking_time }}"type="time" class="validate" required>
+                    <label for="cooking_time">Cooking Time:</label>
+                </div>
+            </div>
+
+            <!-- edit description -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="recipe_description" name="recipe_description" 

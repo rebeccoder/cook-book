@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="headings text-shadow center-align">Full {{recipe.recipe_name}} recipe</h3>
+<br>
 
 <div class="row">
     <div class="card green lighten-4">
@@ -11,6 +12,7 @@
           <h4 strong class=" text-shadow center-align">{{ recipe.recipe_name}}</h4>
           <p>Category: {{ recipe.recipe_category }} </p>
           <p>Allergens: {{ recipe.recipe_allergens }} </p>
+          <p>Cooking Time: {{ recipe.cooking_time }}</p>
           <p>Ingredients:</p>
           <ol>
           {% for ingredient in recipe.recipe_ingredients.split(",") %}
@@ -24,8 +26,16 @@
           {% endfor %}
           </ol>
           <p>Uploaded by: {{ recipe.created_by }}</p>
+          <div class="row">
+            <div class="col s12">
+                <p class="center-align">
+                    Return to
+                    <a href="{{ url_for('get_recipes') }}">Recipes</a>
+                </p>
+            </div>
         </div>
         </div>
+      </div>
       </form>
     </div>
 </div>

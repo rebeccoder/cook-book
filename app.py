@@ -141,6 +141,7 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_steps": request.form.get("recipe_steps"),
+            "cooking_time": request.form.get("cooking_time"),
             "recipe_allergens": request.form.getlist("recipe_allergens"),
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_image": request.form.get("recipe_image"),
@@ -168,6 +169,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_steps": request.form.get("recipe_steps"),
+            "cooking_time": request.form.get("cooking_time"),
             "recipe_allergens": request.form.getlist("recipe_allergens"),
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_image": request.form.get("recipe_image"),
@@ -207,6 +209,7 @@ def show_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_allergens": request.form.getlist("recipe_allergens"),
+            "cooking_time": request.form.get("cooking_time"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_steps": request.form.get("recipe_steps"),
             "created_by": session["user"]
