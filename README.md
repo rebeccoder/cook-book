@@ -59,3 +59,28 @@ As a visitor to the site I want to be able to see all the recipes available in o
 As a vistor to the site I want to be able to click on individual recipes without needing to log in
 As a visitor to the site I want to be able to see the recipes on my mobile phone
 
+### Design Choices
+
+#### Colours
+
+To keep within the expected theme of a usual vegan website the main stand out colour I used was a light green on the nav bar and an even lighter green for the forms. 
+The image I used for the background has avocado flesh on it (vegans loooove avocado) and the light green I've used is similar to that which I thought really complimented the background.
+I also added a splash of orange to brighten the page.
+The headers for each page are in black so that they are easy to see.
+The text within the forms is currently in grey although I may change this in down the line.
+
+hex code colours are as follows:
+
+----colours hex code & colour chart here -----
+
+### Fonts
+
+After playing around with a few fonts I decided to go with Rajdhani from Google fonts.
+Thicker fonts didn't suit the website very much, I liked Rajdhani font as it is minimal, tidy and clear. I also added a shadow to this font which subtly makes it pop out more.
+
+### Styling
+
+A lot of the styling came from the website Materialize such as the template cards, navbar and footer elements and was inspired by the Mini Project Tutorial by Code Institute.
+
+
+
