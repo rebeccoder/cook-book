@@ -102,35 +102,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# @app.route("/add_recipe", methods=["GET", "POST"])
-# def add_recipe():
-#     # adds recipe to database
-#     if request.method == "POST":
-
-#         recipes = {
-#             "recipe_ingredients": request.form.get("recipe_ingredients"),
-#             "recipe_name": request.form.get("recipe_name"),
-#             "recipe_description": request.form.get("recipe_description"),
-#             "recipe_steps": request.form.get("recipe_steps"),
-#             "recipe_allergens": request.form.getlist("recipe_allergens"),
-#             "recipe_category": request.form.getlist("recipe_category"),
-#             "recipe_image": request.form.get("recipe_image"),
-#             "created_by": session["user"]
-#         }
-
-#         mongo.db.recipes.insert_one(recipes)
-#         flash("Recipe Added")
-#         return redirect(url_for("get_recipes"))
-
-#         allergens = mongo.db.allergens.find().sort("recipe_allergens", 1)
-#         category = mongo.db.recipe_category.find().sort("recipe_category", 1)
-#         return render_template(
-#             "add_recipe.html", allergens=allergens,
-#             recipe_category=recipe_category)
-
-#     return render_template(
-#         "add_recipe.html")
-
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     # adds recipe to database
@@ -139,6 +110,7 @@ def add_recipe():
         recipes = {
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_name": request.form.get("recipe_name"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_steps": request.form.get("recipe_steps"),
             "cooking_time": request.form.get("cooking_time"),
@@ -170,6 +142,7 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_steps": request.form.get("recipe_steps"),
             "cooking_time": request.form.get("cooking_time"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "recipe_allergens": request.form.getlist("recipe_allergens"),
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_image": request.form.get("recipe_image"),
@@ -210,6 +183,7 @@ def show_recipe(recipe_id):
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_allergens": request.form.getlist("recipe_allergens"),
             "cooking_time": request.form.get("cooking_time"),
+            "recipe_serves": request.form.get("recipe_serves"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_steps": request.form.get("recipe_steps"),
             "created_by": session["user"]
