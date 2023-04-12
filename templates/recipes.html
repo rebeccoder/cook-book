@@ -37,7 +37,8 @@
         </div>
         <div class="card-action">
             <a class="text-green" href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">full recipe</a>
-          </div>
+        </div>
+
           <!-- edit and delete button for user-->
           {% if session.user|lower == recipe.created_by|lower %}
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small orange accent-2">Delete Recipe</a>
