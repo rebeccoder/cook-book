@@ -22,7 +22,7 @@
 		<nav class="nav-extended text-shadow green lighten-2">
 			<div class="nav-wrapper">
 				<a href="{{ url_for('get_recipes') }}" class= " headings brand-logo">the vegan cook book</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Navigation Bar"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     {% if session.user %}
@@ -39,10 +39,10 @@
 
         <!-- mobile sidenav -->
 		<ul class="sidenav green lighten-3" id="mobile-demo">
-            <li><h4 class="center-align"> Vegan Cook Book</h4></li>
+            <li><h4 class="center-align"> The Vegan Cook Book</h4></li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}
-            <li><a href="#">New Recipe</a></li>
+            <li><a href="{{ url_for('add_recipe')}}">New Recipe</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>   
             {% else %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -75,8 +75,8 @@
     <footer class="green lighten-3">
         <div class="container">
                 <ul>
-                <a href="https://facebook.com" target="_blank"><i class="fa-brands small fa-facebook" style="color: #ffffff;"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fa-brands small fa-instagram" style="color: #ffffff;"></i></a>
+                <a href="https://facebook.com" target="_blank" aria-label="Go to our facebook page (opens in new tab)"><i class="fa-brands small fa-facebook" style="color: #ffffff;"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Go to our instagram page (opens in new tab)"><i class="fa-brands small fa-instagram" style="color: #ffffff;"></i></a>
                 </ul>
             <p class="copyright text-muted">Copyright &copy; The Vegan CookBook <span id="copyright"></span></p>
         </div>
