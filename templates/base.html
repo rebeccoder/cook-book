@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
@@ -15,16 +18,18 @@
     {% endblock %}
     <title>The Vegan Cook Book</title>
 </head>
+
 <body>
 
-	<header>
+    <header>
         <!-- top navbar -->
-		<nav class="nav-extended text-shadow green lighten-2">
-			<div class="nav-wrapper">
-				<a href="{{ url_for('get_recipes') }}" class= " headings brand-logo">the vegan cook book</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Navigation Bar"><i class="fas fa-bars"></i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+        <nav class="nav-extended text-shadow green lighten-2">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('get_recipes') }}" class=" headings brand-logo">the vegan cook book</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Navigation Bar"><i
+                        class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     {% if session.user %}
                     <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -33,35 +38,37 @@
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
                     {% endif %}
 
-				</ul>
-			</div>
-		</nav>
+                </ul>
+            </div>
+        </nav>
 
         <!-- mobile sidenav -->
-		<ul class="sidenav green lighten-3" id="mobile-demo">
-            <li><h4 class="center-align"> The Vegan Cook Book</h4></li>
+        <ul class="sidenav green lighten-3" id="mobile-demo">
+            <li>
+                <h4 class="center-align"> The Vegan Cook Book</h4>
+            </li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('add_recipe')}}">New Recipe</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>   
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
             {% endif %}
 
         </ul>
-	</header>
+    </header>
 
     <!-- flash messages -->
     <section>
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row">
-                        <h4 class="text-shadow orange accent-2 center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row">
+            <h4 class="text-shadow orange accent-2 center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
@@ -74,10 +81,14 @@
     <!-- footer -->
     <footer class="green lighten-3">
         <div class="container">
-                <ul>
-                <a href="https://facebook.com" target="_blank" aria-label="Go to our facebook page (opens in new tab)"><i class="fa-brands small fa-facebook" style="color: #ffffff;"></i></a>
-                <a href="https://instagram.com" target="_blank" aria-label="Go to our instagram page (opens in new tab)"><i class="fa-brands small fa-instagram" style="color: #ffffff;"></i></a>
-                </ul>
+            <ul>
+                <a href="https://facebook.com" target="_blank"
+                    aria-label="Go to our facebook page (opens in new tab)"><i class="fa-brands small fa-facebook"
+                        style="color: #ffffff;"></i></a>
+                <a href="https://instagram.com" target="_blank"
+                    aria-label="Go to our instagram page (opens in new tab)"><i class="fa-brands small fa-instagram"
+                        style="color: #ffffff;"></i></a>
+            </ul>
             <p class="copyright text-muted">Copyright &copy; The Vegan CookBook <span id="copyright"></span></p>
         </div>
     </footer>
@@ -87,6 +98,9 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script> $("#copyright").text(new Date().getFullYear()); </script>
+    <script>
+        $("#copyright").text(new Date().getFullYear());
+    </script>
 </body>
+
 </html>

@@ -4,118 +4,118 @@
 <h3 class="text-shadow center-align headings">Edit Recipe</h3>
 <br>
 
-  <div class="row card-panel green lighten-4">
-      <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-          <!-- edit recipe name-->
-          <div class="row">
-              <div class="input-field col s12">
-                  <input id="recipe_name" name="recipe_name" minlenght="2" maxlength="20"
-                      value="{{ recipe.recipe_name }}" type="text" class="validate" required>
-                  <label for="recipe_name">Recipe Name: </label>
-              </div>
-            </div>
+<div class="row card-panel green lighten-4">
+  <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+    <!-- edit recipe name-->
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="recipe_name" name="recipe_name" minlenght="2" maxlength="20" value="{{ recipe.recipe_name }}"
+          type="text" class="validate" required>
+        <label for="recipe_name">Recipe Name: </label>
+      </div>
+    </div>
 
-            <!-- edit category of the dish -->
-            <div class="row">
-              <div class="input-field col s12">
-                <select multiple id="recipe_category" name="recipe_category" class="validate" required>
-                  <option value="" disabled>Select Category</option>
-                  {% for category in categories %}
-                    {% if category.recipe_category in recipe.recipe_category %}
-                      <option value="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
-                    {% else %}
-                      <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
-                    {% endif %}
-                  {% endfor %}
-                </select>
-                <label for="recipe_category">Click to add category of the dish: </label>
-              </div>
-            </div>
+    <!-- edit category of the dish -->
+    <div class="row">
+      <div class="input-field col s12">
+        <select multiple id="recipe_category" name="recipe_category" class="validate" required>
+          <option value="" disabled>Select Category</option>
+          {% for category in categories %}
+          {% if category.recipe_category in recipe.recipe_category %}
+          <option value="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
+          {% else %}
+          <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <label for="recipe_category">Click to add category of the dish: </label>
+      </div>
+    </div>
 
-            <!-- edit description -->
-            <div class="row">
-              <div class="input-field col s12">
-                  <textarea id="recipe_description" name="recipe_description" 
-                  minlenght="4" maxlength="250" class="materialize-textarea active validate" 
-                          required> {{- recipe.recipe_description -}} </textarea>
-                  <label for="recipe_description">Add a short description:</label>
-              </div>
-            </div>
+    <!-- edit description -->
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="recipe_description" name="recipe_description" minlenght="4" maxlength="250"
+          class="materialize-textarea active validate" required> {{- recipe.recipe_description -}} </textarea>
+        <label for="recipe_description">Add a short description:</label>
+      </div>
+    </div>
 
-            <!-- edit cooking time -->
-            <div class="row">
-              <div class="input-field col s12">
-                  <input id="cooking_time" name="cooking_time" 
-                  value="{{ recipe.cooking_time }}"type="time" class="validate" required>
-                  <label for="cooking_time">Cooking Time:</label>
-              </div>
-            </div>
+    <!-- edit cooking time -->
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="cooking_time" name="cooking_time" value="{{ recipe.cooking_time }}" type="time" class="validate"
+          required>
+        <label for="cooking_time">Cooking Time:</label>
+      </div>
+    </div>
 
-            <!-- edit serves -->
-            <div class="row">
-              <div class="input-field col s12">
-                  <input id="recipe_serves" name="recipe_serves" value="{{ recipe.recipe_serves }}" type="text" class="validate" required>
-                  <label for="recipe_serves">Serves:</label>
-              </div>
-            </div>
+    <!-- edit serves -->
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="recipe_serves" name="recipe_serves" value="{{ recipe.recipe_serves }}" type="text" class="validate"
+          required>
+        <label for="recipe_serves">Serves:</label>
+      </div>
+    </div>
 
-            <!-- edit ingredients-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" 
-                    minlenght="4" maxlength="250" class="materialize-textarea validate" required>
+    <!-- edit ingredients-->
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="recipe_ingredients" name="recipe_ingredients" minlenght="4" maxlength="250"
+          class="materialize-textarea validate" required>
                         {{- recipe.recipe_ingredients -}}
                     </textarea>
-                    <label for="recipe_ingredients">Please list the ingredients with each ingredientrated by ",": </label>
-                </div>
-            </div>
-
-            <!-- edit allergens -->
-            <div class="row">
-              <div class="input-field col s12">
-                <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
-                  <option value="" disabled>Select Allergens</option>
-                  {% for allergen in allergens %}
-                    {% if allergen.recipe_allergens in recipe.recipe_allergens %}
-                      <option value="{{ allergen.recipe_allergens }}" selected>{{ allergen.recipe_allergens }}</option>
-                    {% else %}
-                      <option value="{{ allergen.recipe_allergens }}">{{ allergen.recipe_allergens }}</option>
-                    {% endif %}
-                  {% endfor %}
-                </select>
-                <label for="recipe_allergens">Click to add any allergens: </label>
-              </div>
-            </div>
-
-            <!-- edit steps -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="recipe_steps" name="recipe_steps"
-                    minlenght="4" maxlength="250" class="materialize-textarea active validate" required>
-                    {{- recipe.recipe_steps -}} </textarea>
-                    <label for="recipe_description">Describe the steps to prepare your recipe: </label>
-                </div>
-            </div>
-
-            <!-- edit image -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="recipe_image" name="recipe_image" value="{{ recipe.recipe_image }}"
-                    minlenght="4" maxlength="250" type="text" class="validate" required>
-                    <label for="url_uploaded">Please paste a link to an image of your recipe here:</label>
-                </div>
-
-            <!--cancel and submit buttons-->
-            <div class="row">
-                <a href="{{ url_for('get_recipes') }}" class="btn-large green lighten-1 text-shadow">
-                    Cancel <i class="fas fa-times-circle right"></i>
-                </a>
-                <button type="submit" class="btn-large green darken-2 text-shadow">
-                    Edit Recipe <i class="fas fa-edit right"></i>
-                </button>
-            </div> 
-        </form>
+        <label for="recipe_ingredients">Please list the ingredients with each ingredientrated by ",": </label>
+      </div>
     </div>
+
+    <!-- edit allergens -->
+    <div class="row">
+      <div class="input-field col s12">
+        <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
+          <option value="" disabled>Select Allergens</option>
+          {% for allergen in allergens %}
+          {% if allergen.recipe_allergens in recipe.recipe_allergens %}
+          <option value="{{ allergen.recipe_allergens }}" selected>{{ allergen.recipe_allergens }}</option>
+          {% else %}
+          <option value="{{ allergen.recipe_allergens }}">{{ allergen.recipe_allergens }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <label for="recipe_allergens">Click to add any allergens: </label>
+      </div>
+    </div>
+
+    <!-- edit steps -->
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="recipe_steps" name="recipe_steps" minlenght="4" maxlength="250"
+          class="materialize-textarea active validate" required>
+                    {{- recipe.recipe_steps -}} </textarea>
+        <label for="recipe_description">Describe the steps to prepare your recipe: </label>
+      </div>
+    </div>
+
+    <!-- edit image -->
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="recipe_image" name="recipe_image" value="{{ recipe.recipe_image }}" minlenght="4" maxlength="250"
+          type="text" class="validate" required>
+        <label for="url_uploaded">Please paste a link to an image of your recipe here:</label>
+      </div>
+
+      <!--cancel and submit buttons-->
+      <div class="row">
+        <a href="{{ url_for('get_recipes') }}" class="btn-large green lighten-1 text-shadow">
+          Cancel <i class="fas fa-times-circle right"></i>
+        </a>
+        <button type="submit" class="btn-large green darken-2 text-shadow">
+          Edit Recipe <i class="fas fa-edit right"></i>
+        </button>
+      </div>
+  </form>
+</div>
 
 
 {% endblock %}
