@@ -133,3 +133,31 @@ This website uses flash messages to let the user know when they've logged in, lo
 
 - Create an option to download/send all ingredients to a shopping list via a preferred vendor
 
+- Add a user profile so that the user can have a space for all of their own recipes where they can easily access to edit them.
+
+## Technology Used
+### Languages
+
+- HTML
+- CSS
+- Javascript
+- Python
+
+### Tools
+
+MongoDB (https://www.mongodb.com/)
+Materialize (https://materializecss.com/)
+Flask (https://flask.palletsprojects.com/en/2.2.x/)
+jQuery (https://jquery.com/)
+fontawesome (https://fontawesome.com/icons)
+
+## Testing
+
+### Validators
+
+- All pages passed HTML Verification with [W3Validator](validator.w3.org)
+- All pages passed CSS Verification with [W3Validator](jigswa.w3.org)
+- CSS validator errors due to bootstrap.min.css, this is out of my control and an issue with the resource.
+- User testing has been used throughout to ensure the website was responding as expected and intuitive to the user.
+
+
