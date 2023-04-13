@@ -7,45 +7,46 @@
 <!-- search bar -->
 <div class="row card-panel green lighten-4">
   <form action="{{ url_for('search') }}" method="post" class="col s12">
-      <div class="row valign-wrapper center-align">
-          <div class="input-field col s12 m8">
-              <i class="fas fa-search prefix text-shadow" style="color: #ffffff;"></i>
-              <input type="text" name="query" id="query" minlenght="3" maxlength="250" class="validate" required>
-              <label for="query">Search for a Recipe</label>
-          </div>
-          <div class="col s12 m4">
-              <a href="{{ url_for('get_recipes') }}" class="orange accent-2 btn text-shadow">Reset</a>
-              <button type="submit" class="green lighten-1 btn text-shadow">
-                  <i class="fas fa-search left"></i> Search
-              </button>
-          </div>
+    <div class="row valign-wrapper center-align">
+      <div class="input-field col s12 m8">
+        <i class="fas fa-search prefix text-shadow" style="color: #ffffff;"></i>
+        <input type="text" name="query" id="query" minlenght="3" maxlength="250" class="validate" required>
+        <label for="query">Search for a Recipe</label>
       </div>
+      <div class="col s12 m4">
+        <a href="{{ url_for('get_recipes') }}" class="orange accent-2 btn text-shadow">Reset</a>
+        <button type="submit" class="green lighten-1 btn text-shadow">
+          <i class="fas fa-search left"></i> Search
+        </button>
+      </div>
+    </div>
   </form>
 </div>
 
 <!-- recipe card -->
-  {% for recipe in recipes %}
-<div class="row">
-    <div class="col s12 m6 center-align">
-      <div class="card">
-        <div class="card-image">
-            <img src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}"/>
-          <span class="card-title"> {{ recipe.recipe_name }} </span>
-        </div>
-        <div class="card-content">
-          <p> {{ recipe.recipe_description }}</p>
-        </div>
-        <div class="card-action">
-            <a class="text-green" href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">full recipe</a>
-        </div>
 
-          <!-- edit and delete button for user-->
-          {% if session.user|lower == recipe.created_by|lower %}
-            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small orange accent-2">Delete Recipe</a>
-            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small green lighten-1">Edit Recipe</a>
-          {% endif %}
-        </div>
+<div class="row">
+  {% for recipe in recipes %}
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}" />
+        <span class="card-title"> {{ recipe.recipe_name }} </span>
       </div>
-      {% endfor %}
+      <div class="card-content">
+        <p> {{ recipe.recipe_description }}</p>
+      </div>
+      <div class="card-action">
+        <a class="text-green" href="{{ url_for('show_recipe', recipe_id=recipe._id) }}">full recipe</a>
+      </div>
+
+      <!-- edit and delete button for user-->
+      {% if session.user|lower == recipe.created_by|lower %}
+      <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small orange accent-2">Delete Recipe</a>
+      <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small green lighten-1">Edit Recipe</a>
+      {% endif %}
     </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}

@@ -26,3 +26,11 @@ footer {
     padding: 1.5em;
 }
 
+.input-field>label {
+    color: black;
+}
+
+.card-image>img {
+    aspect-ratio: 1;
+    object-fit: cover;
+}
