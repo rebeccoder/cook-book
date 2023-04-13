@@ -125,6 +125,11 @@ Once the user has added a new recipe there will be two buttons on the recipe dis
 This website uses flash messages to let the user know when they've logged in, logged out, created, edited or deleted a recipe. Flash messages are there to give a response to the user so that they know what they've tried to do is successful.
 
 
+## Future Goals
 
+- Once the website is recieving more traffic I would like to add the option to browse category pages. Birthdays, Chinese Food, Light Lunches... etc. that kind of thing. This would also involve adding more categories to the selector in the New Recipe form so users could determine what category their website fits in to.
 
+- I would also like to increase the search functionality allowing user to refine their searches to filter out certain allergens or to search within certain cooking times etc.
+
+- Create an option to download/send all ingredients to a shopping list via a preferred vendor
 
