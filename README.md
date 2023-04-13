@@ -161,3 +161,46 @@ fontawesome (https://fontawesome.com/icons)
 - User testing has been used throughout to ensure the website was responding as expected and intuitive to the user.
 
 
+## UI
+
+### Navigation
+- Nav bar displays correctly on all pages
+- Clicking each link on the navbar has the expected response
+- *Log Out* logs the user out of their session returning them to Home
+- Users without an account can not access the *New Recipe* page
+- Users logged into a session are not given links for *Register* and *Log In* as they're not relevent
+
+### Footer
+
+- Each text element displays as expected in the correct position
+- Footer links displayed for Facebook and Instagram both navigate to the websites as expected
+- The links also open in new tabs, aria labels have been added to warn screen readers that they will be redirected to a new web page
+- Copyright year is coded to always show the current year
+
+### Add Recipe
+
+- Link from nav bar correctly directs the user to the New Recipe Page
+- Information input is required in all fields for the form to submit
+- Data is sent to Mongo DB
+
+
+### Edit Recipe
+
+- Logged in user is able to see their recipes on the main recipe page where there is an edit button that redirects them to the edit form
+- Information sudmitted in the *New Recipe* form is retrieved from MongoDB and is displayed in the edit form
+- User is able to amend recipe and resubmit to MongoDB
+- There is a flash message to confirm the recipe has been edited
+
+### Delete Recipe
+
+- Logged in user is able to see their recipes on the main recipe page where there is a delete button
+- User is able to delete recipe from MongoDB and recipe page
+- There is a flash message to confirm the recipe has been deleted
+
+### Full Recipe
+
+- All users are able to click link from main page to view recipe instructions
+- A large image is displayed to users on navigating to page
+- Information is displayed as expected
+- The username of the person who created the recipe is displayed
+- User cannot amend the recipe from this page even if logged in
