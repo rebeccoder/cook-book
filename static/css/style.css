@@ -46,7 +46,13 @@ footer {
 }
 
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .headings: 1rem;
-    }
+@media (min-width: 280px) and (max-width: 768px) {
+    /* for mobile devices */
+    .brand-logo {
+    font-size: 1.5rem !important
+ }
+
+    .input-field.col .prefix ~ label, .input-field.col .prefix ~ .validate ~ label {
+    width: auto;
+}
+}
