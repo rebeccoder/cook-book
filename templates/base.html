@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>The Vegan Cook Book</title>
+    <title>Vegan Cook Book</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <!-- top navbar -->
         <nav class="nav-extended text-shadow green lighten-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class=" headings brand-logo">the vegan cook book</a>
+                <a href="{{ url_for('get_recipes') }}" class=" headings brand-logo">vegan cook book</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right" aria-label="Navigation Bar"><i
                         class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
@@ -45,7 +45,7 @@
         <!-- mobile sidenav -->
         <ul class="sidenav green lighten-3" id="mobile-demo">
             <li>
-                <h4 class="center-align"> The Vegan Cook Book</h4>
+                <h4 class="center-align">Vegan Cook Book</h4>
             </li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}
@@ -89,7 +89,7 @@
                     aria-label="Go to our instagram page (opens in new tab)"><i class="fa-brands small fa-instagram"
                         style="color: #ffffff;"></i></a>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; The Vegan CookBook <span id="copyright"></span></p>
+            <p class="copyright text-muted">Copyright &copy; Vegan CookBook <span id="copyright"></span></p>
         </div>
     </footer>
 
