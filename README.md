@@ -129,8 +129,33 @@ This website uses flash messages to let the user know when they've logged in, lo
 
 
 ## Information Architecture
-### Database Choice
-### Data Storage
+
+**User Data**
+
+| Title         | Key In Database | Form Validation | Data Type |
+|---------------|-----------------|-----------------|-----------|
+| User Id       | _id             | No Validation   | ObjectId  |
+| First Name    | first_name      | Text            | string    |
+| Last Name     | last_name       | Text            | string    |
+| E-mail        | email           | Text            | string    |
+| Username      | username        | Text            | string    |
+| Password      | password        | Text            | string    |
+
+**Recipe Data**
+
+| Title                  | Key In Database        | Form Validation | Data Type |
+|------------------------|------------------------|-----------------|-----------|
+| Recipe Name            | recipe_name            | Text            | string    |
+| Description            | recipe_description     | Text            | string    |
+| Steps                  | recipe_steps           | Text            | string    |
+| Allergens              | recipe_allergens       | Select          | Array     |
+| Category               | recipe_category        | Select          | Array     |
+| Cooking Time           | cooking_time           | Number(time)    | string    |
+| Created By             | created_by             | Text (username) | string    |
+| Ingredients            | recipe_ingredients     | text            | string    |
+| Serves                 | recipe_serves          | Number          | string    |
+| Recipe Image           | recipe_image           | text            | string    |
+
 
 ## Future Goals
 
