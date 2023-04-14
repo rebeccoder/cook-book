@@ -125,7 +125,8 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("recipe_category", 1)
     return render_template(
-        "add_recipe.html", categories=categories)
+        "add_recipe.html", allergens=allergens,
+        categories=categories) 
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -133,12 +134,8 @@ def edit_recipe(recipe_id):
     # updates recipe in database
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
-    if "user" not in session:
-        flash("You must be logged in")
-        return redirect(url_for("login"))
-
-    if recipe["created_by"] != session["user"] or not session["user"]:
-        flash("You can only edit your own recipes!")
+    if recipe["created_by"] != session["user"]:
+        flash("You are unable to edit this recipe")
         return redirect(url_for("get_recipes"))
 
     if request.method == "POST":
@@ -160,10 +157,13 @@ def edit_recipe(recipe_id):
         return redirect(url_for("get_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    allergens = mongo.db.allergens.find().sort("recipe_allergens", 1)
     categories = mongo.db.categories.find().sort("recipe_category", 1)
     return render_template(
         "edit_recipe.html", recipe=recipe,
         categories=categories)
+
+
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -202,23 +202,19 @@ def show_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("show_recipe.html", recipe=recipe)
 
-
-# error handler messages
-@app.errorhandler(404)
+@APP.errorhandler(404)
 def page_not_found(e):
     """
     On 404 error passes user to custom 404 page
     """
     return render_template('pages/404.html'), 404
 
-
-@app.errorhandler(500)
+@APP.errorhandler(500)
 def internal_error(err):
     """
     On 500 error passes user to custom 500 page
     """
     return render_template('pages/500.html'), 500
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
