@@ -293,3 +293,15 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 7. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
 
 8. The site is now successfully deployed.
+
+## Credits
+
+
+
+The Code Institute's Mini Project on Non-Relational Database Management Systems and the Introduction to Flask: The Flask Framework walkthrough was a big inspiration for the logic of this application
+
+Images were sourced through Google Image search. All credits for these remain with the original photographers.
+
+A huge thank you to my Mentor Richard for his wisdom and knowledge and encouragement throughout!
+
+Also a huge thanks to all the tutors a code institute for all their help when debugging my code
