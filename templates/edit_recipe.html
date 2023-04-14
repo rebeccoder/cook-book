@@ -19,7 +19,6 @@
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_category" name="recipe_category" class="validate" required>
-          <option value="" disabled>Select Category</option>
           {% for category in categories %}
           {% if category.recipe_category in recipe.recipe_category %}
           <option value="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
@@ -74,7 +73,6 @@
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
-          <option value="" disabled>Select Allergens</option>
           {% for allergen in allergens %}
           {% if allergen.recipe_allergens in recipe.recipe_allergens %}
           <option value="{{ allergen.recipe_allergens }}" selected>{{ allergen.recipe_allergens }}</option>

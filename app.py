@@ -30,7 +30,7 @@ def search():
     # search bar
     query = request.form.get("query")
     # recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    recipes = list(mongo.db.recipes.find({"recipe_name": {"$regex": query, "$options": "ig"}}))
+    recipes = list(mongo.db.recipes.find({"recipe_name": {"$regex": query, "$options": "i"}}))
     return render_template("recipes.html", recipes=recipes)
 
 

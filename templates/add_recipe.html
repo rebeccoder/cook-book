@@ -19,7 +19,6 @@
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_category" name="recipe_category" class="validate" required>
-          <option value="" disabled selected>Select Category</option>
           {% for category in categories %}
           <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
           {% endfor %}
@@ -65,7 +64,6 @@
     <div class="row">
       <div class="input-field col s12">
         <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
-          <option value="" disabled selected>Select Allergens</option>
           {% for allergen in allergens %}
           <option value="{{ allergen.recipe_allergens }}">{{ allergen.recipe_allergens }}</option>
           {% endfor %}
