@@ -1,3 +1,5 @@
+--- mockup image here ---
+
 # The Vegan Cook Book
 
 The Vegan Cook Book is an online resource for anyone interested in vegan recipes to have the opportunity to share and search for their favourite vegan recipes which they are then able to view, edit or delete if needs be.
@@ -5,9 +7,7 @@ The Vegan Cook Book is an online resource for anyone interested in vegan recipes
 ## Table of contents
 
 1. [UX](#ux)
-    - [Goals](#goals)
-        - [Project Goals](#project-goals)
-        - [Visitor Goals](#visitor-goals)
+    - [Visitor Goals](#visitor-goals)
     - [User Stories](#user-stories)
     - [Design Choices](#design-choices)
     - [Wireframes](#wireframes)
@@ -19,17 +19,19 @@ The Vegan Cook Book is an online resource for anyone interested in vegan recipes
     - [Database Choice](#design-choice)
     - [Data Storage](#data-storage)
 
-4. [Technology Used](#technology-used)
+4. [Future Goals](#future-goals)
 
-5. [Testing](#testing)
+5. [Technology Used](#technology-used)
 
-6. [Deployment](#deployment)
+6. [Testing](#testing)
 
-7. [Credits](#credits)
-    - [Content](#content)
-    - [Media](#media)
-    - [Code](#code)
-    - [Acknowledgements](#acknowledgements)
+7. [UI](#ui)
+
+8. [Issues and Resolutions](#issues-and-resolutions)
+
+9. [Deployment](#deployment)
+
+10. [Credits](#credits)
 
 
 ## UX
@@ -88,25 +90,26 @@ A lot of the styling came from the website Materialize such as the template card
 --- enter wireframes here ---
 
 ## Features
+### Existing Features
 
-### Navigation bar
+#### Navigation bar
 
 The navigation bar allows the user to easily browse through only the relevant pages when using the website. If the user is logged in then the navigation bar  only displays the Home, New Recipe and Log Out options. If the user is logged out however then it the only displays the Home, Register and Log In options.
 
-### Home Page
+#### Home Page
 
 The home page is accessible to anyone on the website whether they're logged in or not. This is where all the recipes are able to be seen at a glance, each recipe has an image, a title and a description with a link to the full recipe. 
 
 
-### Full Recipe Page
+#### Full Recipe Page
 
 Once the user has chosen which recipe they want to look at they are able to click on the link below it on the home page which will take them to a page displaying the full recipe. This includes a large image followed by the name and category of the dish, a list of any allergens, how many people it serves, cooking time and a list of all the ingredients, a step by step list of instructions and lastly the username of the person who created the recipe.
 
-### Search Bar
+#### Search Bar
 
 I have included a search bar into the home page, users are able to search for recipes by name here. It also includes a reset button taking the user back to the home page so that they don't need to use the back button in their browser.
 
-### User Accounts
+#### User Accounts
 
 There is an option to register an account on the website. 
 Once the user has signed up their username gets saved to the database and their password gets encrypted so that their sensitive information is not sent to Mongo DB.
@@ -116,14 +119,18 @@ Although anyone is able to browse the website even if they're not logged in, use
 The user is also given the option to log out on the navbar, if they choose to log out then they are redirected to the log in page as it makes it quicker to log back in if they logged out by mistake or are keeping the tab open to log back in later.
 
 
-### Edit and Delete Functions
+#### Edit and Delete Functions
 
 Once the user has added a new recipe there will be two buttons on the recipe displaying on the home page, one for edit and one for delete. The user is able to edit and delete their recipes at any time. The person logged in can only change recipes that were made with their account, users are not able to edit or delete any recipes created by other users.
 
-### Flash Messages
+#### Flash Messages
 
 This website uses flash messages to let the user know when they've logged in, logged out, created, edited or deleted a recipe. Flash messages are there to give a response to the user so that they know what they've tried to do is successful.
 
+
+## Information Architecture
+### Database Choice
+### Data Storage
 
 ## Future Goals
 
@@ -296,12 +303,10 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 
 ## Credits
 
-
-
 The Code Institute's Mini Project on Non-Relational Database Management Systems and the Introduction to Flask: The Flask Framework walkthrough was a big inspiration for the logic of this application
 
 Images were sourced through Google Image search. All credits for these remain with the original photographers.
 
-A huge thank you to my Mentor Richard for his wisdom and knowledge and encouragement throughout!
+A massive thank you to my Mentor Richard for his wisdom, knowledge and encouragement throughout!
 
-Also a huge thanks to all the tutors a code institute for all their help when debugging my code
+Also a huge thanks to all the tutors at code institute for all their help when debugging my code, I couldn't have done it without them.
