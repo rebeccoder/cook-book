@@ -204,3 +204,92 @@ fontawesome (https://fontawesome.com/icons)
 - Information is displayed as expected
 - The username of the person who created the recipe is displayed
 - User cannot amend the recipe from this page even if logged in
+
+## Issues and Resolutions
+
+## Deployment
+
+**How to the run this project locally**
+
+To run this project locally on your own IDE please follow the instructions below:
+
+The following must be installed on your machine:
+
+- PIP
+- Python 3.7 (or higher)
+- Git
+- Either a MongoDB Cloud account or MongoDB running locally.
+
+**Instructions**
+
+* Download a clone of the GitHub repository selecting Download Zip
+
+* Open a terminal session in the unzip folder or cd to the correct location.
+
+*Please note: commands may differ depending on your OS, and it may be necessary to check documentation regarding virtual environments to ensure the correct running in your own environment.
+  
+Note: Your Python command may differ, such as python or py
+
+Ensure pip is upto date with the following command
+```
+pip3 install --upgrade pip.
+```
+
+Install flask
+
+```
+pip3 install flask
+```
+Once flask is installed you will need to install Flask from flask, then set up your requirements.txt file
+
+```
+pip3 install -r requirements.txt.
+```
+Then create a file called ```env.py```
+
+Inside the env.py file, create a SECRET_KEY variable and a MONGO_URI to link to your own database as per below. Please make sure to call your database our_recipe_store, with 3 collections: ingredients, recipes and users. Currently the two main collections are recipes and users, ingredients was set up in advance for future development.
+    
+In your env.py file:
+```    
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "input your secret key here")
+os.environ.setdefault("MONGO_URI", " input your uri link here ")
+os.environ.setdefault("MONGO_DBNAME", "our_recipe_store")
+ ```   
+    
+You can now run the application with the command
+```
+python3 app.py
+```
+    
+**Deployment to Heroku**    
+
+This was developed using a [GitPod](https://gitpod.io/ "Link to GitPod") workspace. The code was commited to [Git](https://git-scm.com/ "Link to Git") and pushed to [GitHub](https://github.com/ "Link to GitHub") using the terminal.
+
+To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+
+1. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+
+2. From the Heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+3. Confirm the linking of the heroku app to the correct GitHub repository.
+
+4. In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+5. Set the following config vars:
+
+- IP: 0.0.0.0
+- PORT: 5000
+- MONGO_URI: Your MONGO URI
+- SECRET_KEY: Your SECRET_KEY
+
+- To get your MONGO_URI read the MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
+
+6. In the heroku dashboard, click "Deploy".
+
+7. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+8. The site is now successfully deployed.
