@@ -19,19 +19,6 @@ footer {
     color: white;
 }
 
-.without_ampm::-webkit-datetime-edit-ampm-field {
-    display: none;
-  }
-
-  input[type=time]::-webkit-clear-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    -ms-appearance:none;
-    appearance: none;
-    margin: -10px; 
-  }
-
 #recipe-page {
     font-family: 'Rajdhani', sans-serif;
     text-transform: capitalize;
@@ -53,11 +40,13 @@ footer {
     font-size: 1rem;
 }
 
-.card-image>img {
-    aspect-ratio: 1;
-    object-fit: cover;
+.card-image {
+    aspect-ratio: 1 / 1;
 }
 
+.card-image>img {
+    object-fit: cover;
+}
 
 @media (min-width: 280px) and (max-width: 768px) {
     /* for mobile devices */
