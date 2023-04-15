@@ -68,9 +68,14 @@ I also added a splash of orange to brighten the page.
 The headers for each page are in black so that they are easy to see.
 The text within the forms is currently in grey although I may change this in down the line.
 
-hex code colours are as follows:
+![Color Chart](/static/images/color_chart.png)
 
-----colours hex code & colour chart here -----
+Hex codes for colours are as follows:
+* #81C784 
+* #A5D6A7
+* #388E3C
+* #FFAB40
+* #000000
 
 ### Fonts
 
@@ -86,7 +91,7 @@ A lot of the styling came from the website Materialize such as the template card
 
 ![Homepage](/static/wireframes/wireframe_home.png)
 ![Log In](/static/wireframes/wireframe_login.png)
-![Register](/static/wireframes/register.png)
+![Register](/static/wireframes/wireframe_register.png)
 ![Add Recipe](/static/wireframes/wireframe_add_recipe.png)
 ![Edit Recipe](/static/wireframes/wireframe_edit_recipe.png)
 ![Full Recipe](/static/wireframes/wireframe_full_recipe.png)
@@ -277,9 +282,6 @@ Unresolved Issues:
 * When migrating from gitpod to codeeverywhere as I ran out of gitpod hours and Code Institute is no longer using gitpod for some reason the cooking time function changed from just number to numbers with AM and PM on the end, I'm not sure what caused this but I havne't had a change to solve this yet
 
 * Due to migrating to codeeverywhere I haven't been able to access to log out function and therefore unable to test if the Edit Recipe and Delete Recipe function are being defended. 
-
-
-
 
 
 ## Deployment
