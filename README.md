@@ -301,9 +301,9 @@ This website uses flash messages to let the user know when they've logged in, lo
 
 Unresolved Issues:
 
-* When migrating from gitpod to codeeverywhere as I ran out of gitpod hours and Code Institute is no longer using gitpod for some reason the cooking time function changed from just number to numbers with AM and PM on the end, I'm not sure what caused this but I havne't had a change to solve this yet
+* The cooking time function on some devices comes up with an AM or PM input. I'm still trying to work out how to stop it from happening on devices that's clocks are in an AM and PM format.
 
-* Due to migrating to codeeverywhere I haven't been able to access to log out function and therefore unable to test if the Edit Recipe and Delete Recipe function are being defended. 
+* I have been unable to defend the edit page, I have tried many codes I've expected to work but it keeps throwing error messages no matter what I try
 
 
 ## Deployment

@@ -19,6 +19,19 @@ footer {
     color: white;
 }
 
+.without_ampm::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
+
+  input[type=time]::-webkit-clear-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance:none;
+    appearance: none;
+    margin: -10px; 
+  }
+
 #recipe-page {
     font-family: 'Rajdhani', sans-serif;
     text-transform: capitalize;

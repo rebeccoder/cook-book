@@ -8,7 +8,7 @@
     <form method="POST" action="{{ url_for('show_recipe', recipe_id=recipe._id) }}">
       <div class="card-image">
         <div id="recipe-page">
-          <img src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}" />
+          <img src="{{ recipe.recipe_image }}" alt=" {{ recipe.recipe_name }}">
           <h4 strong class=" text-shadow center-align">{{ recipe.recipe_name}}</h4>
           {% for category in recipe.recipe_category %}
           <p>Category: {% for category in recipe.recipe_category %}{{ category }}{% endfor %} </p>
