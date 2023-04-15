@@ -2,6 +2,13 @@ body {
     background-image: url('/static/images/website-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
 }
 
 .text-shadow {
@@ -17,6 +24,8 @@ body {
 footer {
     padding: 5px;
     color: white;
+    margin-top: auto;
+
 }
 
 #recipe-page {
