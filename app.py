@@ -194,6 +194,21 @@ def show_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("show_recipe.html", recipe=recipe)
 
+# error handler messages
+@app.errorhandler(404)
+def page_not_found(e):
+    """
+    On 404 error passes user to custom 404 page
+    """
+    return render_template('pages/404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(err):
+    """
+    On 500 error passes user to custom 500 page
+    """
+    return render_template('pages/500.html'), 500
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
