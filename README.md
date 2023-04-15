@@ -242,6 +242,46 @@ fontawesome (https://fontawesome.com/icons)
 
 ## Issues and Resolutions
 
+---
+* Problem: Email not connecting to Mongo DB
+* Cause: No name element on email input field
+* Resolution: Added name="email" to the email input
+
+---
+* Problem: Error when reading css file
+* Cause: Not linking correctly to file
+* Resolution: Amend linking and use test colour background to confirm file link is working properly
+
+---
+* Problem: Error when trying to use search bar
+* Cause: Mongo DB no longer supporting the "ig" RegEx field
+* Resolution: Changed the "ig" field to "i" as suggested on stack overflow
+
+---
+* Problem: Select opotions from create form not rendering to edit form
+* Cause: Due to having a misplaced render template and mistakes in for loop
+* Resolution: Rearranged for loop and removed the unnecessary render template
+
+---
+* Problem: Edit form not updating Mongo DB
+* Cause: mongo.db.recipes.update() not working
+* Resolution: Using mongo.db.recipes.replace_one() instead as suggested on Stack Overflow
+
+---
+* Problem: Recipe cards on home page not lining up as expected
+* Cause: Card images weren't the same size and was causing the cards to find space anywhere they could fit on the homepage
+* Resolution: Added styling to the images aspect-ratio and object-fit to make sure they all stay the same
+
+Unresolved Issues:
+
+* When migrating from gitpod to codeeverywhere as I ran out of gitpod hours and Code Institute is no longer using gitpod for some reason the cooking time function changed from just number to numbers with AM and PM on the end, I'm not sure what caused this but I havne't had a change to solve this yet
+
+* Due to migrating to codeeverywhere I haven't been able to access to log out function and therefore unable to test if the Edit Recipe and Delete Recipe function are being defended. 
+
+
+
+
+
 ## Deployment
 
 **How to the run this project locally**
