@@ -241,6 +241,25 @@ This website uses flash messages to let the user know when they've logged in, lo
 ## Testing
 
 ---
+### Responsivity
+
+- The website has been tried and true as a responsive website on the following devices:
+* iPhone SE
+* iPhone XR
+* iPhoe 12 Pro
+* Pixel 5
+* Samsung Galaxy S20 Ultra
+* iPad Air
+* iPad Mini
+* iPhone 6/7/8
+* Surface Pro 7
+* Surface Duo
+* Samsung A51/71
+* Nest Hub
+* Nest Hub Max 
+* All possible tested monitor sizes
+
+--- 
 
 ### Validators
 
