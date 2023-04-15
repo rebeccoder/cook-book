@@ -344,7 +344,7 @@ pip3 install flask
 Once flask is installed you will need to install Flask from flask, then set up your requirements.txt file
 
 ```
-pip3 install -r requirements.txt.
+pip3 install -r requirements.txt
 ```
 Then create a file called ```env.py```
 
