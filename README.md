@@ -13,11 +13,8 @@ The Vegan Cook Book is an online resource for anyone interested in vegan recipes
     - [Wireframes](#wireframes)
 
 2. [Features](#features)
-    - [Existing Features](#exisiting-features)
 
 3. [Information Architecture](#information-architecture)
-    - [Database Choice](#design-choice)
-    - [Data Storage](#data-storage)
 
 4. [Future Goals](#future-goals)
 
@@ -87,7 +84,13 @@ A lot of the styling came from the website Materialize such as the template card
 
 ## Wireframes
 
---- enter wireframes here ---
+![Homepage](/static/wireframes/wireframe_home.png)
+![Log In](/static/wireframes/wireframe_login.png)
+![Register](/static/wireframes/register.png)
+![Add Recipe](/static/wireframes/wireframe_add_recipe.png)
+![Edit Recipe](/static/wireframes/wireframe_edit_recipe.png)
+![Full Recipe](/static/wireframes/wireframe_full_recipe.png)
+![Full Recipe](/static/wireframes/wireframe_mobile.png)
 
 ## Features
 ### Existing Features
