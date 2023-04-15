@@ -132,7 +132,7 @@ The home page is accessible to anyone on the website whether they're logged in o
 
 ![Full Recipe](/static/images/full-recipe.png)
 
-Once the user has chosen which recipe they want to look at they are able to click on the link below it on the home page which will take them to a page displaying the full recipe. This includes a large image followed by the name and category of the dish, a list of any allergens, how many people it serves, cooking time and a list of all the ingredients, a step by step list of instructions and lastly the username of the person who created the recipe.
+Once the user has chosen which recipe they want to look at they are able to click on the link below it on the home page which will take them to a page displaying the full recipe. This includes a large image followed by the name and category of the dish, how many people it serves, cooking time and a list of all the ingredients, a step by step list of instructions and lastly the username of the person who created the recipe.
 
 ---
 
@@ -197,7 +197,6 @@ This website uses flash messages to let the user know when they've logged in, lo
 | Recipe Name            | recipe_name            | Text            | string    |
 | Description            | recipe_description     | Text            | string    |
 | Steps                  | recipe_steps           | Text            | string    |
-| Allergens              | recipe_allergens       | Select          | Array     |
 | Category               | recipe_category        | Select          | Array     |
 | Cooking Time           | cooking_time           | Number(time)    | string    |
 | Created By             | created_by             | Text (username) | string    |
