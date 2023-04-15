@@ -40,11 +40,9 @@ footer {
     font-size: 1rem;
 }
 
-.card-image {
-    aspect-ratio: 1 / 1;
-}
 
 .card-image>img {
+    aspect-ratio: 1 /1;
     object-fit: cover;
 }
 

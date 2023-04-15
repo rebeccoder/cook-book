@@ -136,7 +136,7 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     if recipe["created_by"] != session["user"]:
-        flash("You can only edit your own recipes")
+        flash("You are unable to edit this recipe")
         return redirect(url_for("get_recipes"))
 
     if request.method == "POST":
