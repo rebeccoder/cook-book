@@ -137,8 +137,8 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     if "user" not in session:
-            flash("You must be logged in")
-            return redirect(url_for("login"))
+        flash("You must be logged in")
+        return redirect(url_for("login"))
 
     if recipe["created_by"] != session["user"] or not session["user"]:
         flash("You can only edit your own recipes!")
@@ -158,7 +158,6 @@ def edit_recipe(recipe_id):
             "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
-        
 
         mongo.db.recipes.replace_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated")
