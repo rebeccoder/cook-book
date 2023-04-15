@@ -221,6 +221,7 @@ This website uses flash messages to let the user know when they've logged in, lo
 - All pages passed CSS Verification with [W3Validator](jigswa.w3.org)
 - CSS validator errors due to bootstrap.min.css, this is out of my control and an issue with the resource.
 - User testing has been used throughout to ensure the website was responding as expected and intuitive to the user.
+- All Python Code in PEP8 compliant as per Code Institute PEP8 Checker [CIPEP8](https://pep8ci.herokuapp.com/#)
 
 
 ## UI
