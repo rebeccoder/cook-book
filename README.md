@@ -268,6 +268,7 @@ This website uses flash messages to let the user know when they've logged in, lo
 - User testing has been used throughout to ensure the website was responding as expected and intuitive to the user.
 - All Python Code in PEP8 compliant as per Code Institute PEP8 Checker [CIPEP8](https://pep8ci.herokuapp.com/#)
 
+--- 
 
 ## UI
 
@@ -291,7 +292,6 @@ This website uses flash messages to let the user know when they've logged in, lo
 - Information input is required in all fields for the form to submit
 - Data is sent to Mongo DB
 
-
 ### Edit Recipe
 
 - Logged in user is able to see their recipes on the main recipe page where there is an edit button that redirects them to the edit form
@@ -314,8 +314,8 @@ This website uses flash messages to let the user know when they've logged in, lo
 - User cannot amend the recipe from this page even if logged in
 
 ## Issues and Resolutions
----
 
+---
 * Problem: Email not connecting to Mongo DB
 * Cause: No name element on email input field
 * Resolution: Added name="email" to the email input
@@ -461,3 +461,5 @@ Images were sourced through Google Image search. All credits for these remain wi
 A massive thank you to my Mentor Richard for his wisdom, knowledge and encouragement throughout!
 
 Also a huge thanks to all the tutors at code institute for all their help when debugging my code, I couldn't have done it without them.
+
+---
