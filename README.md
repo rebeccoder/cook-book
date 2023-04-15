@@ -1,4 +1,4 @@
---- mockup image here ---
+![Device Mock Up](/static/images/device-mockup.png)
 
 # The Vegan Cook Book
 
@@ -68,7 +68,7 @@ I also added a splash of orange to brighten the page.
 The headers for each page are in black so that they are easy to see.
 The text within the forms is currently in grey although I may change this in down the line.
 
-![Color Chart](/static/images/color_chart.png)
+![Color Chart](/static/images/color-chart.png)
 
 Hex codes for colours are as follows:
 * #81C784 
@@ -89,13 +89,13 @@ A lot of the styling came from the website Materialize such as the template card
 
 ## Wireframes
 
-![Homepage](/static/wireframes/wireframe_home.png)
-![Log In](/static/wireframes/wireframe_login.png)
-![Register](/static/wireframes/wireframe_register.png)
-![Add Recipe](/static/wireframes/wireframe_add_recipe.png)
-![Edit Recipe](/static/wireframes/wireframe_edit_recipe.png)
-![Full Recipe](/static/wireframes/wireframe_full_recipe.png)
-![Full Recipe](/static/wireframes/wireframe_mobile.png)
+![Homepage](/static/wireframes/wireframe-home.png)
+![Log In](/static/wireframes/wireframe-login.png)
+![Register](/static/wireframes/wireframe-register.png)
+![Add Recipe](/static/wireframes/wireframe-add-recipe.png)
+![Edit Recipe](/static/wireframes/wireframe-edit-recipe.png)
+![Full Recipe](/static/wireframes/wireframe-full-recipe.png)
+![Full Recipe](/static/wireframes/wireframe-mobile.png)
 
 ## Features
 ### Existing Features
