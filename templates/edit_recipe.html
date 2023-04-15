@@ -69,22 +69,6 @@
   </div>
 </div>
 
-<!-- edit allergens -->
-<div class="row">
-  <div class="input-field col s12">
-    <select multiple id="recipe_allergens" name="recipe_allergens" class="validate" required>
-      {% for allergen in allergens %}
-      {% if allergen.recipe_allergens in recipe.recipe_allergens %}
-      <option value="{{ allergen.recipe_allergens }}" selected>{{ allergen.recipe_allergens }}</option>
-      {% else %}
-      <option value="{{ allergen.recipe_allergens }}">{{ allergen.recipe_allergens }}</option>
-      {% endif %}
-      {% endfor %}
-    </select>
-    <label for="recipe_allergens">Click to add any allergens: </label>
-  </div>
-</div>
-
 <!-- edit steps -->
 <div class="row">
   <div class="input-field col s12">

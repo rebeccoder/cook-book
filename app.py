@@ -114,7 +114,6 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_steps": request.form.get("recipe_steps"),
             "cooking_time": request.form.get("cooking_time"),
-            "recipe_allergens": request.form.getlist("recipe_allergens"),
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
@@ -124,11 +123,9 @@ def add_recipe():
         flash("Recipe Added")
         return redirect(url_for("get_recipes"))
 
-    allergens = mongo.db.allergens.find().sort("recipe_allergens", 1)
     categories = mongo.db.categories.find().sort("recipe_category", 1)
     return render_template(
-        "add_recipe.html", allergens=allergens,
-        categories=categories)
+        "add_recipe.html", categories=categories)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -153,7 +150,6 @@ def edit_recipe(recipe_id):
             "recipe_steps": request.form.get("recipe_steps"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_serves": request.form.get("recipe_serves"),
-            "recipe_allergens": request.form.getlist("recipe_allergens"),
             "recipe_category": request.form.getlist("recipe_category"),
             "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
@@ -164,11 +160,10 @@ def edit_recipe(recipe_id):
         return redirect(url_for("get_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    allergens = mongo.db.allergens.find().sort("recipe_allergens", 1)
     categories = mongo.db.categories.find().sort("recipe_category", 1)
     return render_template(
         "edit_recipe.html", recipe=recipe,
-        allergens=allergens, categories=categories)
+        categories=categories)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -195,7 +190,6 @@ def show_recipe(recipe_id):
         recipe_method = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_category": request.form.getlist("recipe_category"),
-            "recipe_allergens": request.form.getlist("recipe_allergens"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_serves": request.form.get("recipe_serves"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
@@ -226,7 +220,5 @@ def internal_error(err):
     return render_template('pages/500.html'), 500
 
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)
+if __name__ == '__main__':
+    APP.run(host=os.environ.get('IP'), port=os.environ.get('PORT'))

@@ -13,9 +13,6 @@
           {% for category in recipe.recipe_category %}
           <p>Category: {% for category in recipe.recipe_category %}{{ category }}{% endfor %} </p>
           {% endfor %}
-          {% for allergen in recipe.allergens %}
-          <p>Allergens: {% for allergen in recipe.recipe_allergens %}{{ allergren }}{% endfor %} </p>
-          {% endfor %}
           <p>Serves: {{ recipe.recipe_serves }}</p>
           <p>Cooking Time: {{ recipe.cooking_time }}</p>
           <p>Ingredients:</p>
