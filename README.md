@@ -185,11 +185,12 @@ This website uses flash messages to let the user know when they've logged in, lo
 
 ### Tools
 
-MongoDB (https://www.mongodb.com/)
-Materialize (https://materializecss.com/)
-Flask (https://flask.palletsprojects.com/en/2.2.x/)
-jQuery (https://jquery.com/)
-fontawesome (https://fontawesome.com/icons)
+- MongoDB (https://www.mongodb.com/)
+- Materialize (https://materializecss.com/)
+- Flask (https://flask.palletsprojects.com/en/2.2.x/)
+- jQuery (https://jquery.com/)
+- fontawesome (https://fontawesome.com/icons)
+- Pip (https://pypi.org/project/pip/)
 
 ## Testing
 
