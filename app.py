@@ -63,6 +63,7 @@ def register():
 
     # put new user into session cookies
         session["user"] = request.form.get("username").lower()
+        print(session['user'])
         flash("Registration Successful!")
     return render_template("register.html")
 
@@ -135,8 +136,12 @@ def edit_recipe(recipe_id):
     # updates recipe in database
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
-    if recipe["created_by"] != session["user"]:
-        flash("You are unable to edit this recipe")
+    if "user" not in session:
+            flash("You must be logged in")
+            return redirect(url_for("login"))
+
+    if recipe["created_by"] != session["user"] or not session["user"]:
+        flash("You can only edit your own recipes!")
         return redirect(url_for("get_recipes"))
 
     if request.method == "POST":
@@ -153,6 +158,7 @@ def edit_recipe(recipe_id):
             "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
+        
 
         mongo.db.recipes.replace_one({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated")
@@ -170,8 +176,12 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
-    if recipe["created_by"] != session["user"]:
-        flash("You are unable to delete this recipe")
+    if "user" not in session:
+        flash("You must be logged in")
+        return redirect(url_for("login"))
+
+    if recipe["created_by"] != session["user"] or not session["user"]:
+        flash("You can only edit your own recipes!")
         return redirect(url_for("get_recipes"))
 
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})

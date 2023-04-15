@@ -301,7 +301,7 @@ This website uses flash messages to let the user know when they've logged in, lo
 
 Unresolved Issues:
 
-* The cooking time function on some devices comes up with an AM or PM input. I'm still trying to work out how to stop it from happening on devices that's clocks are in an AM and PM format.
+* The cooking time function on some devices comes up with an AM or PM input. I'm still trying to work out how to stop it from happening on devices that's clocks are in an AM and PM format. It is fine if the clock is in 24 hour format and is fine on mobile devices.
 
 * I have been unable to defend the edit page, I have tried many codes I've expected to work but it keeps throwing error messages no matter what I try
 
