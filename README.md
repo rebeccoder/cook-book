@@ -299,11 +299,18 @@ This website uses flash messages to let the user know when they've logged in, lo
 * Cause: Card images weren't the same size and was causing the cards to find space anywhere they could fit on the homepage
 * Resolution: Added styling to the images aspect-ratio and object-fit to make sure they all stay the same
 
+---
+* Problem: Error thrown when trying to redirect a user who is trying to edit someone elses recipe
+* Cause: Code was only told to check if users in session were the rightful user or not, but wasn't checking those who weren't in session
+* Resolution: Added an if statement to check if there is a user in session and if not to redirect then to the log in page
+---
+* Problem: Footer not sticking to the bottom of the log in page screem
+* Cause: The webpage was not as long as the screen
+* Resolution: Added styling to make sure the min length of the body was the full screen and to fix the footer to the bottom of the screen
+
 Unresolved Issues:
 
-* The cooking time function on some devices comes up with an AM or PM input. I'm still trying to work out how to stop it from happening on devices that's clocks are in an AM and PM format. It is fine if the clock is in 24 hour format and is fine on mobile devices.
-
-* I have been unable to defend the edit page, I have tried many codes I've expected to work but it keeps throwing error messages no matter what I try
+* The cooking time function on some devices comes up with an AM or PM input. I'm still trying to work out how to stop it from happening on devices that's clocks are in an AM and PM format. It is fine if the clock is in 24 hour format which it is on most desktops and is fine on mobile devices.
 
 
 ## Deployment
@@ -398,6 +405,8 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 ## Credits
 
 ---
+
+Background image from [Pixabay](https://pixabay.com/)
 
 The Code Institute's Mini Project on Non-Relational Database Management Systems and the Introduction to Flask: The Flask Framework walkthrough was a big inspiration for the logic of this application
 
