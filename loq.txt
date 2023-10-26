@@ -1,0 +1,775 @@
+
+2023-10-26T10:43:57.916683+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:43:57.916683+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:43:57.916684+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:43:57.916684+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:43:57.916684+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:43:57.916684+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:43:57.916684+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:43:57.916685+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:43:57.916685+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:43:57.916685+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/500.html
+2023-10-26T10:59:20.376728+00:00 heroku[router]: at=info method=GET path="/" host=cook-book-f2c5f00978e3.herokuapp.com request_id=2acccf2a-66ad-4f0c-b2ef-50f4adcb17d6 fwd="78.150.166.115" dyno=web.1 connect=0ms service=387ms status=500 bytes=458 protocol=https
+2023-10-26T10:59:20.376944+00:00 app[web.1]: [2023-10-26 10:59:20,375] ERROR in app: Exception on / [GET]
+2023-10-26T10:59:20.376955+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.376956+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:20.376956+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:20.376957+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376961+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:20.376962+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:20.376962+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376962+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:20.376963+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:20.376963+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376963+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1799, in dispatch_request
+2023-10-26T10:59:20.376964+00:00 app[web.1]:     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+2023-10-26T10:59:20.376964+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376965+00:00 app[web.1]:   File "/app/app.py", line 23, in get_recipes
+2023-10-26T10:59:20.376965+00:00 app[web.1]:     return render_template("recipes.html", recipes=recipes)
+2023-10-26T10:59:20.376965+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376966+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 147, in render_template
+2023-10-26T10:59:20.376966+00:00 app[web.1]:     return _render(app, template, context)
+2023-10-26T10:59:20.376966+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376966+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 130, in _render
+2023-10-26T10:59:20.376966+00:00 app[web.1]:     rv = template.render(context)
+2023-10-26T10:59:20.376966+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376966+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+2023-10-26T10:59:20.376967+00:00 app[web.1]:     self.environment.handle_exception()
+2023-10-26T10:59:20.376967+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+2023-10-26T10:59:20.376967+00:00 app[web.1]:     raise rewrite_traceback_stack(source=source)
+2023-10-26T10:59:20.376967+00:00 app[web.1]:   File "/app/templates/recipes.html", line 1, in top-level template code
+2023-10-26T10:59:20.376968+00:00 app[web.1]:     {% extends "base.html" %}
+2023-10-26T10:59:20.376968+00:00 app[web.1]:   File "/app/templates/base.html", line 77, in top-level template code
+2023-10-26T10:59:20.376972+00:00 app[web.1]:     {% block content %}
+2023-10-26T10:59:20.376972+00:00 app[web.1]:   File "/app/templates/recipes.html", line 29, in block 'content'
+2023-10-26T10:59:20.376973+00:00 app[web.1]:     {% for recipe in recipes %}
+2023-10-26T10:59:20.376973+00:00 app[web.1]:     ^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376973+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1248, in next
+2023-10-26T10:59:20.376973+00:00 app[web.1]:     if len(self.__data) or self._refresh():
+2023-10-26T10:59:20.376973+00:00 app[web.1]:                            ^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376973+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1165, in _refresh
+2023-10-26T10:59:20.376973+00:00 app[web.1]:     self.__send_message(q)
+2023-10-26T10:59:20.376974+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1052, in __send_message
+2023-10-26T10:59:20.376974+00:00 app[web.1]:     response = client._run_operation(
+2023-10-26T10:59:20.376974+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376974+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:20.376974+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:20.376974+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376974+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1330, in _run_operation
+2023-10-26T10:59:20.376974+00:00 app[web.1]:     return self._retryable_read(
+2023-10-26T10:59:20.376974+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376975+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:20.376975+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:20.376975+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376976+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1442, in _retryable_read
+2023-10-26T10:59:20.376976+00:00 app[web.1]:     with self._socket_from_server(read_pref, server, session) as (sock_info, read_pref):
+2023-10-26T10:59:20.376976+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:20.376976+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:20.376976+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376976+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1282, in _socket_from_server
+2023-10-26T10:59:20.376977+00:00 app[web.1]:     with self._get_socket(server, session) as sock_info:
+2023-10-26T10:59:20.376977+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:20.376977+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:20.376977+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376977+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1217, in _get_socket
+2023-10-26T10:59:20.376977+00:00 app[web.1]:     with server.get_socket(handler=err_handler) as sock_info:
+2023-10-26T10:59:20.376978+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:20.376978+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:20.376978+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376982+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1407, in get_socket
+2023-10-26T10:59:20.376982+00:00 app[web.1]:     sock_info = self._get_socket(handler=handler)
+2023-10-26T10:59:20.376982+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376982+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1520, in _get_socket
+2023-10-26T10:59:20.376982+00:00 app[web.1]:     sock_info = self.connect(handler=handler)
+2023-10-26T10:59:20.376983+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376983+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1378, in connect
+2023-10-26T10:59:20.376983+00:00 app[web.1]:     sock_info.authenticate()
+2023-10-26T10:59:20.376983+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 870, in authenticate
+2023-10-26T10:59:20.376983+00:00 app[web.1]:     auth.authenticate(creds, self)
+2023-10-26T10:59:20.376983+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 549, in authenticate
+2023-10-26T10:59:20.376983+00:00 app[web.1]:     auth_func(credentials, sock_info)
+2023-10-26T10:59:20.376983+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 475, in _authenticate_default
+2023-10-26T10:59:20.376984+00:00 app[web.1]:     return _authenticate_scram(credentials, sock_info, "SCRAM-SHA-1")
+2023-10-26T10:59:20.376984+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376984+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 241, in _authenticate_scram
+2023-10-26T10:59:20.376984+00:00 app[web.1]:     res = sock_info.command(source, cmd)
+2023-10-26T10:59:20.376984+00:00 app[web.1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.376984+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 767, in command
+2023-10-26T10:59:20.376984+00:00 app[web.1]:     return command(
+2023-10-26T10:59:20.376985+00:00 app[web.1]:            ^^^^^^^^
+2023-10-26T10:59:20.376985+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/network.py", line 166, in command
+2023-10-26T10:59:20.376985+00:00 app[web.1]:     helpers._check_command_response(
+2023-10-26T10:59:20.376986+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/helpers.py", line 181, in _check_command_response
+2023-10-26T10:59:20.376986+00:00 app[web.1]:     raise OperationFailure(errmsg, code, response, max_wire_version)
+2023-10-26T10:59:20.376987+00:00 app[web.1]: pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2023-10-26T10:59:20.377303+00:00 app[web.1]: 10.1.20.158 - - [26/Oct/2023 10:59:20] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-10-26T10:59:20.379267+00:00 app[web.1]: Error on request:
+2023-10-26T10:59:20.379267+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.379268+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:20.379268+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:20.379268+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379268+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:20.379268+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:20.379269+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379269+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:20.379269+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:20.379269+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379269+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1799, in dispatch_request
+2023-10-26T10:59:20.379270+00:00 app[web.1]:     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+2023-10-26T10:59:20.379270+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379270+00:00 app[web.1]:   File "/app/app.py", line 23, in get_recipes
+2023-10-26T10:59:20.379270+00:00 app[web.1]:     return render_template("recipes.html", recipes=recipes)
+2023-10-26T10:59:20.379271+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379271+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 147, in render_template
+2023-10-26T10:59:20.379271+00:00 app[web.1]:     return _render(app, template, context)
+2023-10-26T10:59:20.379271+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379271+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 130, in _render
+2023-10-26T10:59:20.379271+00:00 app[web.1]:     rv = template.render(context)
+2023-10-26T10:59:20.379271+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379272+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+2023-10-26T10:59:20.379272+00:00 app[web.1]:     self.environment.handle_exception()
+2023-10-26T10:59:20.379272+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+2023-10-26T10:59:20.379272+00:00 app[web.1]:     raise rewrite_traceback_stack(source=source)
+2023-10-26T10:59:20.379272+00:00 app[web.1]:   File "/app/templates/recipes.html", line 1, in top-level template code
+2023-10-26T10:59:20.379272+00:00 app[web.1]:     {% extends "base.html" %}
+2023-10-26T10:59:20.379272+00:00 app[web.1]:   File "/app/templates/base.html", line 77, in top-level template code
+2023-10-26T10:59:20.379273+00:00 app[web.1]:     {% block content %}
+2023-10-26T10:59:20.379273+00:00 app[web.1]:   File "/app/templates/recipes.html", line 29, in block 'content'
+2023-10-26T10:59:20.379273+00:00 app[web.1]:     {% for recipe in recipes %}
+2023-10-26T10:59:20.379273+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1248, in next
+2023-10-26T10:59:20.379273+00:00 app[web.1]:     if len(self.__data) or self._refresh():
+2023-10-26T10:59:20.379273+00:00 app[web.1]:                            ^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379274+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1165, in _refresh
+2023-10-26T10:59:20.379274+00:00 app[web.1]:     self.__send_message(q)
+2023-10-26T10:59:20.379274+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1052, in __send_message
+2023-10-26T10:59:20.379274+00:00 app[web.1]:     response = client._run_operation(
+2023-10-26T10:59:20.379274+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379274+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:20.379274+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:20.379274+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379274+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1330, in _run_operation
+2023-10-26T10:59:20.379275+00:00 app[web.1]:     return self._retryable_read(
+2023-10-26T10:59:20.379275+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379275+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:20.379275+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:20.379275+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379275+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1442, in _retryable_read
+2023-10-26T10:59:20.379275+00:00 app[web.1]:     with self._socket_from_server(read_pref, server, session) as (sock_info, read_pref):
+2023-10-26T10:59:20.379275+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:20.379276+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:20.379276+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379276+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1282, in _socket_from_server
+2023-10-26T10:59:20.379276+00:00 app[web.1]:     with self._get_socket(server, session) as sock_info:
+2023-10-26T10:59:20.379276+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:20.379276+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:20.379277+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379277+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1217, in _get_socket
+2023-10-26T10:59:20.379277+00:00 app[web.1]:     with server.get_socket(handler=err_handler) as sock_info:
+2023-10-26T10:59:20.379277+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:20.379277+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:20.379277+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379278+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1407, in get_socket
+2023-10-26T10:59:20.379279+00:00 app[web.1]:     sock_info = self._get_socket(handler=handler)
+2023-10-26T10:59:20.379280+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379280+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1520, in _get_socket
+2023-10-26T10:59:20.379280+00:00 app[web.1]:     sock_info = self.connect(handler=handler)
+2023-10-26T10:59:20.379280+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379280+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1378, in connect
+2023-10-26T10:59:20.379280+00:00 app[web.1]:     sock_info.authenticate()
+2023-10-26T10:59:20.379281+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 870, in authenticate
+2023-10-26T10:59:20.379281+00:00 app[web.1]:     auth.authenticate(creds, self)
+2023-10-26T10:59:20.379281+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 549, in authenticate
+2023-10-26T10:59:20.379281+00:00 app[web.1]:     auth_func(credentials, sock_info)
+2023-10-26T10:59:20.379281+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 475, in _authenticate_default
+2023-10-26T10:59:20.379281+00:00 app[web.1]:     return _authenticate_scram(credentials, sock_info, "SCRAM-SHA-1")
+2023-10-26T10:59:20.379281+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379282+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 241, in _authenticate_scram
+2023-10-26T10:59:20.379282+00:00 app[web.1]:     res = sock_info.command(source, cmd)
+2023-10-26T10:59:20.379282+00:00 app[web.1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379282+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 767, in command
+2023-10-26T10:59:20.379283+00:00 app[web.1]:     return command(
+2023-10-26T10:59:20.379283+00:00 app[web.1]:            ^^^^^^^^
+2023-10-26T10:59:20.379283+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/network.py", line 166, in command
+2023-10-26T10:59:20.379283+00:00 app[web.1]:     helpers._check_command_response(
+2023-10-26T10:59:20.379283+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/helpers.py", line 181, in _check_command_response
+2023-10-26T10:59:20.379284+00:00 app[web.1]:     raise OperationFailure(errmsg, code, response, max_wire_version)
+2023-10-26T10:59:20.379284+00:00 app[web.1]: pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2023-10-26T10:59:20.379285+00:00 app[web.1]: 
+2023-10-26T10:59:20.379285+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:20.379285+00:00 app[web.1]: 
+2023-10-26T10:59:20.379285+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.379286+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in run_wsgi
+2023-10-26T10:59:20.379286+00:00 app[web.1]:     execute(self.server.app)
+2023-10-26T10:59:20.379286+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 320, in execute
+2023-10-26T10:59:20.379286+00:00 app[web.1]:     application_iter = app(environ, start_response)
+2023-10-26T10:59:20.379286+00:00 app[web.1]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379286+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2551, in __call__
+2023-10-26T10:59:20.379286+00:00 app[web.1]:     return self.wsgi_app(environ, start_response)
+2023-10-26T10:59:20.379287+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379287+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2531, in wsgi_app
+2023-10-26T10:59:20.379287+00:00 app[web.1]:     response = self.handle_exception(e)
+2023-10-26T10:59:20.379287+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379287+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1727, in handle_exception
+2023-10-26T10:59:20.379287+00:00 app[web.1]:     server_error = self.ensure_sync(handler)(server_error)
+2023-10-26T10:59:20.379287+00:00 app[web.1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379288+00:00 app[web.1]:   File "/app/app.py", line 220, in internal_error
+2023-10-26T10:59:20.379288+00:00 app[web.1]:     return render_template('pages/500.html'), 500
+2023-10-26T10:59:20.379288+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379288+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:20.379288+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:20.379288+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379288+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:20.379288+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:20.379289+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379289+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:20.379289+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:20.379289+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379289+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:20.379289+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:20.379289+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379289+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:20.379289+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:20.379292+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379292+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:20.379292+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:20.379292+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.379292+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:20.379292+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:20.379292+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/500.html
+2023-10-26T10:59:20.473569+00:00 app[web.1]: [2023-10-26 10:59:20,472] ERROR in app: Exception on /favicon.ico [GET]
+2023-10-26T10:59:20.473576+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.473577+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:20.473577+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:20.473578+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473578+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1788, in dispatch_request
+2023-10-26T10:59:20.473578+00:00 app[web.1]:     self.raise_routing_exception(req)
+2023-10-26T10:59:20.473579+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1770, in raise_routing_exception
+2023-10-26T10:59:20.473580+00:00 app[web.1]:     raise request.routing_exception  # type: ignore
+2023-10-26T10:59:20.473580+00:00 app[web.1]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473580+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/ctx.py", line 351, in match_request
+2023-10-26T10:59:20.473581+00:00 app[web.1]:     result = self.url_adapter.match(return_rule=True)  # type: ignore
+2023-10-26T10:59:20.473581+00:00 app[web.1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473581+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/routing/map.py", line 624, in match
+2023-10-26T10:59:20.473582+00:00 app[web.1]:     raise NotFound() from None
+2023-10-26T10:59:20.473594+00:00 app[web.1]: werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2023-10-26T10:59:20.473594+00:00 app[web.1]: 
+2023-10-26T10:59:20.473595+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:20.473595+00:00 app[web.1]: 
+2023-10-26T10:59:20.473595+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.473596+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:20.473596+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:20.473596+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473596+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:20.473596+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:20.473597+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473597+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1669, in handle_user_exception
+2023-10-26T10:59:20.473597+00:00 app[web.1]:     return self.handle_http_exception(e)
+2023-10-26T10:59:20.473597+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473597+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1609, in handle_http_exception
+2023-10-26T10:59:20.473598+00:00 app[web.1]:     return self.ensure_sync(handler)(e)
+2023-10-26T10:59:20.473598+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473598+00:00 app[web.1]:   File "/app/app.py", line 212, in page_not_found
+2023-10-26T10:59:20.473598+00:00 app[web.1]:     return render_template('pages/404.html'), 404
+2023-10-26T10:59:20.473599+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473599+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:20.473599+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:20.473599+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473600+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:20.473600+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:20.473600+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473601+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:20.473601+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:20.473601+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473601+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:20.473601+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:20.473602+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473602+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:20.473602+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:20.473602+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473602+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:20.473603+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:20.473603+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.473603+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:20.473603+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:20.473603+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/404.html
+2023-10-26T10:59:20.473871+00:00 app[web.1]: 10.1.20.158 - - [26/Oct/2023 10:59:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2023-10-26T10:59:20.474986+00:00 app[web.1]: Error on request:
+2023-10-26T10:59:20.474986+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.474987+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:20.474987+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:20.474987+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474987+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1788, in dispatch_request
+2023-10-26T10:59:20.474988+00:00 app[web.1]:     self.raise_routing_exception(req)
+2023-10-26T10:59:20.474988+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1770, in raise_routing_exception
+2023-10-26T10:59:20.474988+00:00 app[web.1]:     raise request.routing_exception  # type: ignore
+2023-10-26T10:59:20.474988+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/ctx.py", line 351, in match_request
+2023-10-26T10:59:20.474988+00:00 app[web.1]:     result = self.url_adapter.match(return_rule=True)  # type: ignore
+2023-10-26T10:59:20.474988+00:00 app[web.1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474989+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/routing/map.py", line 624, in match
+2023-10-26T10:59:20.474989+00:00 app[web.1]:     raise NotFound() from None
+2023-10-26T10:59:20.474989+00:00 app[web.1]: werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2023-10-26T10:59:20.474989+00:00 app[web.1]: 
+2023-10-26T10:59:20.474989+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:20.474989+00:00 app[web.1]: 
+2023-10-26T10:59:20.474989+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.474990+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:20.474990+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:20.474990+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474990+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:20.474990+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:20.474990+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474990+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1669, in handle_user_exception
+2023-10-26T10:59:20.474991+00:00 app[web.1]:     return self.handle_http_exception(e)
+2023-10-26T10:59:20.474991+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474991+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1609, in handle_http_exception
+2023-10-26T10:59:20.474991+00:00 app[web.1]:     return self.ensure_sync(handler)(e)
+2023-10-26T10:59:20.474991+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474991+00:00 app[web.1]:   File "/app/app.py", line 212, in page_not_found
+2023-10-26T10:59:20.474991+00:00 app[web.1]:     return render_template('pages/404.html'), 404
+2023-10-26T10:59:20.474991+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474991+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:20.474992+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:20.474992+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474992+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:20.474992+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:20.474992+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474992+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:20.474992+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:20.474993+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474998+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:20.474998+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:20.474998+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474998+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:20.474998+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:20.474999+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474999+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:20.474999+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:20.474999+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.474999+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:20.474999+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:20.474999+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/404.html
+2023-10-26T10:59:20.474999+00:00 app[web.1]: 
+2023-10-26T10:59:20.475000+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:20.475000+00:00 app[web.1]: 
+2023-10-26T10:59:20.475000+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:20.475000+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in run_wsgi
+2023-10-26T10:59:20.475000+00:00 app[web.1]:     execute(self.server.app)
+2023-10-26T10:59:20.475000+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 320, in execute
+2023-10-26T10:59:20.475001+00:00 app[web.1]:     application_iter = app(environ, start_response)
+2023-10-26T10:59:20.475003+00:00 app[web.1]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475003+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2551, in __call__
+2023-10-26T10:59:20.475003+00:00 app[web.1]:     return self.wsgi_app(environ, start_response)
+2023-10-26T10:59:20.475004+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475004+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2531, in wsgi_app
+2023-10-26T10:59:20.475004+00:00 app[web.1]:     response = self.handle_exception(e)
+2023-10-26T10:59:20.475004+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475005+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1727, in handle_exception
+2023-10-26T10:59:20.475005+00:00 app[web.1]:     server_error = self.ensure_sync(handler)(server_error)
+2023-10-26T10:59:20.475005+00:00 app[web.1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475005+00:00 app[web.1]:   File "/app/app.py", line 220, in internal_error
+2023-10-26T10:59:20.475005+00:00 app[web.1]:     return render_template('pages/500.html'), 500
+2023-10-26T10:59:20.475005+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475005+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:20.475005+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:20.475006+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475006+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:20.475006+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:20.475006+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475006+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:20.475006+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:20.475006+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475007+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:20.475007+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:20.475007+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475007+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:20.475007+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:20.475007+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475007+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:20.475008+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:20.475008+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:20.475008+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:20.475008+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:20.475008+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/500.html
+2023-10-26T10:59:20.473201+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cook-book-f2c5f00978e3.herokuapp.com request_id=7ed41c2c-c455-4d1d-a50a-b26af27d653e fwd="78.150.166.115" dyno=web.1 connect=0ms service=2ms status=500 bytes=458 protocol=https
+2023-10-26T10:59:37.762377+00:00 heroku[router]: at=info method=GET path="/" host=cook-book-f2c5f00978e3.herokuapp.com request_id=1c7c777a-d578-4715-a188-7e7799754ff0 fwd="84.21.169.61" dyno=web.1 connect=0ms service=386ms status=500 bytes=458 protocol=https
+2023-10-26T10:59:37.764426+00:00 app[web.1]: [2023-10-26 10:59:37,762] ERROR in app: Exception on / [GET]
+2023-10-26T10:59:37.764450+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:37.764451+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:37.764451+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:37.764451+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764451+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:37.764452+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:37.764452+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:37.764452+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:37.764453+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764453+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1799, in dispatch_request
+2023-10-26T10:59:37.764453+00:00 app[web.1]:     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+2023-10-26T10:59:37.764454+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764454+00:00 app[web.1]:   File "/app/app.py", line 23, in get_recipes
+2023-10-26T10:59:37.764454+00:00 app[web.1]:     return render_template("recipes.html", recipes=recipes)
+2023-10-26T10:59:37.764454+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764454+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 147, in render_template
+2023-10-26T10:59:37.764455+00:00 app[web.1]:     return _render(app, template, context)
+2023-10-26T10:59:37.764455+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764455+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 130, in _render
+2023-10-26T10:59:37.764455+00:00 app[web.1]:     rv = template.render(context)
+2023-10-26T10:59:37.764455+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764456+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+2023-10-26T10:59:37.764456+00:00 app[web.1]:     self.environment.handle_exception()
+2023-10-26T10:59:37.764456+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+2023-10-26T10:59:37.764456+00:00 app[web.1]:     raise rewrite_traceback_stack(source=source)
+2023-10-26T10:59:37.764457+00:00 app[web.1]:   File "/app/templates/recipes.html", line 1, in top-level template code
+2023-10-26T10:59:37.764458+00:00 app[web.1]:     {% extends "base.html" %}
+2023-10-26T10:59:37.764458+00:00 app[web.1]:   File "/app/templates/base.html", line 77, in top-level template code
+2023-10-26T10:59:37.764458+00:00 app[web.1]:     {% block content %}
+2023-10-26T10:59:37.764458+00:00 app[web.1]:   File "/app/templates/recipes.html", line 29, in block 'content'
+2023-10-26T10:59:37.764458+00:00 app[web.1]:     {% for recipe in recipes %}
+2023-10-26T10:59:37.764459+00:00 app[web.1]:     ^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764459+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1248, in next
+2023-10-26T10:59:37.764459+00:00 app[web.1]:     if len(self.__data) or self._refresh():
+2023-10-26T10:59:37.764459+00:00 app[web.1]:                            ^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764459+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1165, in _refresh
+2023-10-26T10:59:37.764459+00:00 app[web.1]:     self.__send_message(q)
+2023-10-26T10:59:37.764459+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1052, in __send_message
+2023-10-26T10:59:37.764460+00:00 app[web.1]:     response = client._run_operation(
+2023-10-26T10:59:37.764460+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764460+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:37.764460+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:37.764460+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764460+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1330, in _run_operation
+2023-10-26T10:59:37.764460+00:00 app[web.1]:     return self._retryable_read(
+2023-10-26T10:59:37.764460+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764460+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:37.764461+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:37.764461+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764461+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1442, in _retryable_read
+2023-10-26T10:59:37.764461+00:00 app[web.1]:     with self._socket_from_server(read_pref, server, session) as (sock_info, read_pref):
+2023-10-26T10:59:37.764462+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:37.764462+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:37.764462+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764462+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1282, in _socket_from_server
+2023-10-26T10:59:37.764462+00:00 app[web.1]:     with self._get_socket(server, session) as sock_info:
+2023-10-26T10:59:37.764462+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:37.764463+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:37.764463+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764463+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1217, in _get_socket
+2023-10-26T10:59:37.764463+00:00 app[web.1]:     with server.get_socket(handler=err_handler) as sock_info:
+2023-10-26T10:59:37.764463+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:37.764463+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:37.764464+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764469+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1407, in get_socket
+2023-10-26T10:59:37.764469+00:00 app[web.1]:     sock_info = self._get_socket(handler=handler)
+2023-10-26T10:59:37.764469+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764470+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1520, in _get_socket
+2023-10-26T10:59:37.764470+00:00 app[web.1]:     sock_info = self.connect(handler=handler)
+2023-10-26T10:59:37.764470+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764470+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1378, in connect
+2023-10-26T10:59:37.764470+00:00 app[web.1]:     sock_info.authenticate()
+2023-10-26T10:59:37.764470+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 870, in authenticate
+2023-10-26T10:59:37.764470+00:00 app[web.1]:     auth.authenticate(creds, self)
+2023-10-26T10:59:37.764470+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 549, in authenticate
+2023-10-26T10:59:37.764471+00:00 app[web.1]:     auth_func(credentials, sock_info)
+2023-10-26T10:59:37.764471+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 475, in _authenticate_default
+2023-10-26T10:59:37.764471+00:00 app[web.1]:     return _authenticate_scram(credentials, sock_info, "SCRAM-SHA-1")
+2023-10-26T10:59:37.764471+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764471+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 241, in _authenticate_scram
+2023-10-26T10:59:37.764472+00:00 app[web.1]:     res = sock_info.command(source, cmd)
+2023-10-26T10:59:37.764472+00:00 app[web.1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.764472+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 767, in command
+2023-10-26T10:59:37.764472+00:00 app[web.1]:     return command(
+2023-10-26T10:59:37.764472+00:00 app[web.1]:            ^^^^^^^^
+2023-10-26T10:59:37.764472+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/network.py", line 166, in command
+2023-10-26T10:59:37.764473+00:00 app[web.1]:     helpers._check_command_response(
+2023-10-26T10:59:37.764473+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/helpers.py", line 181, in _check_command_response
+2023-10-26T10:59:37.764473+00:00 app[web.1]:     raise OperationFailure(errmsg, code, response, max_wire_version)
+2023-10-26T10:59:37.764476+00:00 app[web.1]: pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2023-10-26T10:59:37.764742+00:00 app[web.1]: 10.1.36.230 - - [26/Oct/2023 10:59:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-10-26T10:59:37.766487+00:00 app[web.1]: Error on request:
+2023-10-26T10:59:37.766488+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:37.766489+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:37.766489+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:37.766489+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766490+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:37.766490+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:37.766490+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766491+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:37.766491+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:37.766491+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766497+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1799, in dispatch_request
+2023-10-26T10:59:37.766497+00:00 app[web.1]:     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+2023-10-26T10:59:37.766498+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766498+00:00 app[web.1]:   File "/app/app.py", line 23, in get_recipes
+2023-10-26T10:59:37.766498+00:00 app[web.1]:     return render_template("recipes.html", recipes=recipes)
+2023-10-26T10:59:37.766499+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766499+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 147, in render_template
+2023-10-26T10:59:37.766499+00:00 app[web.1]:     return _render(app, template, context)
+2023-10-26T10:59:37.766499+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766500+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 130, in _render
+2023-10-26T10:59:37.766500+00:00 app[web.1]:     rv = template.render(context)
+2023-10-26T10:59:37.766500+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766500+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1301, in render
+2023-10-26T10:59:37.766501+00:00 app[web.1]:     self.environment.handle_exception()
+2023-10-26T10:59:37.766501+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 936, in handle_exception
+2023-10-26T10:59:37.766501+00:00 app[web.1]:     raise rewrite_traceback_stack(source=source)
+2023-10-26T10:59:37.766501+00:00 app[web.1]:   File "/app/templates/recipes.html", line 1, in top-level template code
+2023-10-26T10:59:37.766501+00:00 app[web.1]:     {% extends "base.html" %}
+2023-10-26T10:59:37.766502+00:00 app[web.1]:   File "/app/templates/base.html", line 77, in top-level template code
+2023-10-26T10:59:37.766502+00:00 app[web.1]:     {% block content %}
+2023-10-26T10:59:37.766502+00:00 app[web.1]:   File "/app/templates/recipes.html", line 29, in block 'content'
+2023-10-26T10:59:37.766502+00:00 app[web.1]:     {% for recipe in recipes %}
+2023-10-26T10:59:37.766503+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1248, in next
+2023-10-26T10:59:37.766503+00:00 app[web.1]:     if len(self.__data) or self._refresh():
+2023-10-26T10:59:37.766503+00:00 app[web.1]:                            ^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766503+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1165, in _refresh
+2023-10-26T10:59:37.766503+00:00 app[web.1]:     self.__send_message(q)
+2023-10-26T10:59:37.766503+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/cursor.py", line 1052, in __send_message
+2023-10-26T10:59:37.766504+00:00 app[web.1]:     response = client._run_operation(
+2023-10-26T10:59:37.766504+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766504+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:37.766504+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:37.766504+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766505+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1330, in _run_operation
+2023-10-26T10:59:37.766505+00:00 app[web.1]:     return self._retryable_read(
+2023-10-26T10:59:37.766505+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766505+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+2023-10-26T10:59:37.766505+00:00 app[web.1]:     return func(self, *args, **kwargs)
+2023-10-26T10:59:37.766506+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766506+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1442, in _retryable_read
+2023-10-26T10:59:37.766506+00:00 app[web.1]:     with self._socket_from_server(read_pref, server, session) as (sock_info, read_pref):
+2023-10-26T10:59:37.766507+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:37.766507+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:37.766507+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766507+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1282, in _socket_from_server
+2023-10-26T10:59:37.766507+00:00 app[web.1]:     with self._get_socket(server, session) as sock_info:
+2023-10-26T10:59:37.766508+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:37.766508+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:37.766508+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766508+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/mongo_client.py", line 1217, in _get_socket
+2023-10-26T10:59:37.766508+00:00 app[web.1]:     with server.get_socket(handler=err_handler) as sock_info:
+2023-10-26T10:59:37.766509+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/contextlib.py", line 137, in __enter__
+2023-10-26T10:59:37.766509+00:00 app[web.1]:     return next(self.gen)
+2023-10-26T10:59:37.766509+00:00 app[web.1]:            ^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766509+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1407, in get_socket
+2023-10-26T10:59:37.766512+00:00 app[web.1]:     sock_info = self._get_socket(handler=handler)
+2023-10-26T10:59:37.766512+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766512+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1520, in _get_socket
+2023-10-26T10:59:37.766513+00:00 app[web.1]:     sock_info = self.connect(handler=handler)
+2023-10-26T10:59:37.766513+00:00 app[web.1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766513+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 1378, in connect
+2023-10-26T10:59:37.766513+00:00 app[web.1]:     sock_info.authenticate()
+2023-10-26T10:59:37.766513+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 870, in authenticate
+2023-10-26T10:59:37.766513+00:00 app[web.1]:     auth.authenticate(creds, self)
+2023-10-26T10:59:37.766514+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 549, in authenticate
+2023-10-26T10:59:37.766514+00:00 app[web.1]:     auth_func(credentials, sock_info)
+2023-10-26T10:59:37.766514+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 475, in _authenticate_default
+2023-10-26T10:59:37.766514+00:00 app[web.1]:     return _authenticate_scram(credentials, sock_info, "SCRAM-SHA-1")
+2023-10-26T10:59:37.766515+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766515+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/auth.py", line 241, in _authenticate_scram
+2023-10-26T10:59:37.766515+00:00 app[web.1]:     res = sock_info.command(source, cmd)
+2023-10-26T10:59:37.766515+00:00 app[web.1]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766516+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/pool.py", line 767, in command
+2023-10-26T10:59:37.766516+00:00 app[web.1]:     return command(
+2023-10-26T10:59:37.766516+00:00 app[web.1]:            ^^^^^^^^
+2023-10-26T10:59:37.766517+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/network.py", line 166, in command
+2023-10-26T10:59:37.766517+00:00 app[web.1]:     helpers._check_command_response(
+2023-10-26T10:59:37.766517+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/pymongo/helpers.py", line 181, in _check_command_response
+2023-10-26T10:59:37.766517+00:00 app[web.1]:     raise OperationFailure(errmsg, code, response, max_wire_version)
+2023-10-26T10:59:37.766518+00:00 app[web.1]: pymongo.errors.OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2023-10-26T10:59:37.766518+00:00 app[web.1]: 
+2023-10-26T10:59:37.766518+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:37.766519+00:00 app[web.1]: 
+2023-10-26T10:59:37.766519+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:37.766519+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in run_wsgi
+2023-10-26T10:59:37.766519+00:00 app[web.1]:     execute(self.server.app)
+2023-10-26T10:59:37.766519+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 320, in execute
+2023-10-26T10:59:37.766520+00:00 app[web.1]:     application_iter = app(environ, start_response)
+2023-10-26T10:59:37.766520+00:00 app[web.1]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766520+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2551, in __call__
+2023-10-26T10:59:37.766520+00:00 app[web.1]:     return self.wsgi_app(environ, start_response)
+2023-10-26T10:59:37.766521+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766521+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2531, in wsgi_app
+2023-10-26T10:59:37.766521+00:00 app[web.1]:     response = self.handle_exception(e)
+2023-10-26T10:59:37.766521+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766521+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1727, in handle_exception
+2023-10-26T10:59:37.766522+00:00 app[web.1]:     server_error = self.ensure_sync(handler)(server_error)
+2023-10-26T10:59:37.766522+00:00 app[web.1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766522+00:00 app[web.1]:   File "/app/app.py", line 220, in internal_error
+2023-10-26T10:59:37.766522+00:00 app[web.1]:     return render_template('pages/500.html'), 500
+2023-10-26T10:59:37.766523+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766523+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:37.766523+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:37.766523+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766524+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:37.766524+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:37.766524+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766524+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:37.766525+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:37.766525+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766525+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:37.766525+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:37.766525+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766526+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:37.766526+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:37.766529+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766529+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:37.766529+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:37.766530+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:37.766530+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:37.766530+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:37.766530+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/500.html
+2023-10-26T10:59:38.121766+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cook-book-f2c5f00978e3.herokuapp.com request_id=102fe9ab-246d-4b0c-b98b-c7abf4388233 fwd="84.21.169.61" dyno=web.1 connect=1ms service=2ms status=500 bytes=458 protocol=https
+2023-10-26T10:59:38.123847+00:00 app[web.1]: [2023-10-26 10:59:38,122] ERROR in app: Exception on /favicon.ico [GET]
+2023-10-26T10:59:38.123860+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:38.123880+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:38.123880+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:38.123880+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123881+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1788, in dispatch_request
+2023-10-26T10:59:38.123881+00:00 app[web.1]:     self.raise_routing_exception(req)
+2023-10-26T10:59:38.123881+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1770, in raise_routing_exception
+2023-10-26T10:59:38.123882+00:00 app[web.1]:     raise request.routing_exception  # type: ignore
+2023-10-26T10:59:38.123882+00:00 app[web.1]:     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123883+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/ctx.py", line 351, in match_request
+2023-10-26T10:59:38.123883+00:00 app[web.1]:     result = self.url_adapter.match(return_rule=True)  # type: ignore
+2023-10-26T10:59:38.123883+00:00 app[web.1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123883+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/routing/map.py", line 624, in match
+2023-10-26T10:59:38.123884+00:00 app[web.1]:     raise NotFound() from None
+2023-10-26T10:59:38.123888+00:00 app[web.1]: werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2023-10-26T10:59:38.123888+00:00 app[web.1]: 
+2023-10-26T10:59:38.123889+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:38.123889+00:00 app[web.1]: 
+2023-10-26T10:59:38.123889+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:38.123890+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:38.123890+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:38.123890+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123890+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:38.123890+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:38.123890+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123891+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1669, in handle_user_exception
+2023-10-26T10:59:38.123891+00:00 app[web.1]:     return self.handle_http_exception(e)
+2023-10-26T10:59:38.123891+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123891+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1609, in handle_http_exception
+2023-10-26T10:59:38.123891+00:00 app[web.1]:     return self.ensure_sync(handler)(e)
+2023-10-26T10:59:38.123891+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123891+00:00 app[web.1]:   File "/app/app.py", line 212, in page_not_found
+2023-10-26T10:59:38.123892+00:00 app[web.1]:     return render_template('pages/404.html'), 404
+2023-10-26T10:59:38.123892+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123892+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:38.123892+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:38.123892+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123897+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:38.123897+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:38.123897+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123897+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:38.123897+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:38.123897+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123897+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:38.123898+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:38.123898+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123898+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:38.123898+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:38.123898+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123898+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:38.123898+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:38.123899+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.123899+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:38.123899+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:38.123899+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/404.html
+2023-10-26T10:59:38.124146+00:00 app[web.1]: 10.1.36.230 - - [26/Oct/2023 10:59:38] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2023-10-26T10:59:38.125431+00:00 app[web.1]: Error on request:
+2023-10-26T10:59:38.125432+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:38.125433+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1823, in full_dispatch_request
+2023-10-26T10:59:38.125433+00:00 app[web.1]:     rv = self.dispatch_request()
+2023-10-26T10:59:38.125433+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125433+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1788, in dispatch_request
+2023-10-26T10:59:38.125434+00:00 app[web.1]:     self.raise_routing_exception(req)
+2023-10-26T10:59:38.125434+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1770, in raise_routing_exception
+2023-10-26T10:59:38.125434+00:00 app[web.1]:     raise request.routing_exception  # type: ignore
+2023-10-26T10:59:38.125434+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/ctx.py", line 351, in match_request
+2023-10-26T10:59:38.125435+00:00 app[web.1]:     result = self.url_adapter.match(return_rule=True)  # type: ignore
+2023-10-26T10:59:38.125435+00:00 app[web.1]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125435+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/routing/map.py", line 624, in match
+2023-10-26T10:59:38.125435+00:00 app[web.1]:     raise NotFound() from None
+2023-10-26T10:59:38.125436+00:00 app[web.1]: werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2023-10-26T10:59:38.125436+00:00 app[web.1]: 
+2023-10-26T10:59:38.125436+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:38.125437+00:00 app[web.1]: 
+2023-10-26T10:59:38.125437+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:38.125437+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+2023-10-26T10:59:38.125437+00:00 app[web.1]:     response = self.full_dispatch_request()
+2023-10-26T10:59:38.125438+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125438+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1825, in full_dispatch_request
+2023-10-26T10:59:38.125438+00:00 app[web.1]:     rv = self.handle_user_exception(e)
+2023-10-26T10:59:38.125438+00:00 app[web.1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125438+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1669, in handle_user_exception
+2023-10-26T10:59:38.125438+00:00 app[web.1]:     return self.handle_http_exception(e)
+2023-10-26T10:59:38.125438+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125439+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1609, in handle_http_exception
+2023-10-26T10:59:38.125439+00:00 app[web.1]:     return self.ensure_sync(handler)(e)
+2023-10-26T10:59:38.125439+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125439+00:00 app[web.1]:   File "/app/app.py", line 212, in page_not_found
+2023-10-26T10:59:38.125440+00:00 app[web.1]:     return render_template('pages/404.html'), 404
+2023-10-26T10:59:38.125440+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125440+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:38.125440+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:38.125441+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125441+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:38.125442+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:38.125442+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125442+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:38.125442+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:38.125443+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125443+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:38.125443+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:38.125443+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125443+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:38.125444+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:38.125444+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125444+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:38.125444+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:38.125445+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125445+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:38.125445+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:38.125445+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/404.html
+2023-10-26T10:59:38.125445+00:00 app[web.1]: 
+2023-10-26T10:59:38.125445+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2023-10-26T10:59:38.125446+00:00 app[web.1]: 
+2023-10-26T10:59:38.125446+00:00 app[web.1]: Traceback (most recent call last):
+2023-10-26T10:59:38.125446+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in run_wsgi
+2023-10-26T10:59:38.125446+00:00 app[web.1]:     execute(self.server.app)
+2023-10-26T10:59:38.125447+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/werkzeug/serving.py", line 320, in execute
+2023-10-26T10:59:38.125447+00:00 app[web.1]:     application_iter = app(environ, start_response)
+2023-10-26T10:59:38.125451+00:00 app[web.1]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125451+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2551, in __call__
+2023-10-26T10:59:38.125452+00:00 app[web.1]:     return self.wsgi_app(environ, start_response)
+2023-10-26T10:59:38.125452+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 2531, in wsgi_app
+2023-10-26T10:59:38.125453+00:00 app[web.1]:     response = self.handle_exception(e)
+2023-10-26T10:59:38.125453+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125453+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/app.py", line 1727, in handle_exception
+2023-10-26T10:59:38.125453+00:00 app[web.1]:     server_error = self.ensure_sync(handler)(server_error)
+2023-10-26T10:59:38.125454+00:00 app[web.1]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125454+00:00 app[web.1]:   File "/app/app.py", line 220, in internal_error
+2023-10-26T10:59:38.125454+00:00 app[web.1]:     return render_template('pages/500.html'), 500
+2023-10-26T10:59:38.125455+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125455+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 146, in render_template
+2023-10-26T10:59:38.125455+00:00 app[web.1]:     template = app.jinja_env.get_or_select_template(template_name_or_list)
+2023-10-26T10:59:38.125455+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125455+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+2023-10-26T10:59:38.125456+00:00 app[web.1]:     return self.get_template(template_name_or_list, parent, globals)
+2023-10-26T10:59:38.125456+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125456+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 1010, in get_template
+2023-10-26T10:59:38.125456+00:00 app[web.1]:     return self._load_template(name, globals)
+2023-10-26T10:59:38.125457+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125457+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/environment.py", line 969, in _load_template
+2023-10-26T10:59:38.125457+00:00 app[web.1]:     template = self.loader.load(self, name, self.make_globals(globals))
+2023-10-26T10:59:38.125457+00:00 app[web.1]:                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125458+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/jinja2/loaders.py", line 126, in load
+2023-10-26T10:59:38.125458+00:00 app[web.1]:     source, filename, uptodate = self.get_source(environment, name)
+2023-10-26T10:59:38.125458+00:00 app[web.1]:                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125458+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 62, in get_source
+2023-10-26T10:59:38.125459+00:00 app[web.1]:     return self._get_source_fast(environment, template)
+2023-10-26T10:59:38.125459+00:00 app[web.1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-26T10:59:38.125459+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.11/site-packages/flask/templating.py", line 98, in _get_source_fast
+2023-10-26T10:59:38.125459+00:00 app[web.1]:     raise TemplateNotFound(template)
+2023-10-26T10:59:38.125460+00:00 app[web.1]: jinja2.exceptions.TemplateNotFound: pages/500.html

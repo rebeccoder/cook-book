@@ -202,6 +202,9 @@ def show_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("show_recipe.html", recipe=recipe)
 
+
+# error handler messages 
+
 @app.errorhandler(404)
 def page_not_found(e):
     """
